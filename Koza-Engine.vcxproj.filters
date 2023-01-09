@@ -55,6 +55,5 @@
       <Filter>src\Utility</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Sprite.h" />
-    <ClInclude Include="src\Core\Renderer.h" />
   </ItemGroup>
 </Project>

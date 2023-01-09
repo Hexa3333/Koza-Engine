@@ -5,10 +5,24 @@
 #include <string>
 #include <GLFW/glfw3.h>
 
+/*
+
+*   For 2D usage of sprites, the stride has been set to 5.
+*   Therefore there is no color value and if you load vertices that
+*   contain color values it won't work the way you'd expect.    
+
+*   And to fix many more...
+* 
+*   - Modify the Stride
+*   - Send the view matrix
+
+*/
+
+
 Mesh::Mesh(float* vertices, unsigned int* indices, int sizeVertices, int sizeIndices, GLenum drawType)
 {
     this->sizeIndices = sizeIndices;
-    this->view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+    //this->view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
@@ -39,24 +53,14 @@ void Mesh::Render(Shader* pShader)
     
     glBindVertexArray(VAO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    //glDrawElements(GL_TRIANGLES, sizeIndices / 4 /* sizeof(int) = 4 */, GL_UNSIGNED_INT, 0);
-    model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f) * 0.005f, glm::vec3(0.5f, 1.0f, 0.0f));
-    for (unsigned int i = 0; i < 10; i++)
-    {
-        glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, cubePositions[i]);
-        float angle = 20.0f * i;
-        model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-        glUniformMatrix4fv(glGetUniformLocation(pShader->getShaderProgram(), "model"), 1, GL_FALSE, glm::value_ptr(model));
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-    }
+    glDrawElements(GL_TRIANGLES, sizeIndices / 4 /*sizeof(int) == 4*/, GL_UNSIGNED_INT, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
     // Must send values
     glUniformMatrix4fv(glGetUniformLocation(pShader->getShaderProgram(), "model"), 1, GL_FALSE, glm::value_ptr(model));
-    glUniformMatrix4fv(glGetUniformLocation(pShader->getShaderProgram(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-    glUniformMatrix4fv(glGetUniformLocation(pShader->getShaderProgram(), "view"), 1, GL_FALSE, glm::value_ptr(view));
+    //glUniformMatrix4fv(glGetUniformLocation(pShader->getShaderProgram(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+    //glUniformMatrix4fv(glGetUniformLocation(pShader->getShaderProgram(), "view"), 1, GL_FALSE, glm::value_ptr(view));
 }
 
 void Mesh::Kill()
