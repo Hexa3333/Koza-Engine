@@ -1,12 +1,37 @@
 #pragma once
+#include <GL/glew.h>
 
-#include "Mesh.h"
-#include "Texture2D.h"
+#include <ostream>
+#include <functional>
+#include "Config.h"
 
 class Sprite
 {
 private:
-	Texture2D* image;
+	unsigned int textureOBJ[15];
+	
+	std::string sourceImagePath;
+	int imgWidth, imgHeight, imgNumOfNormalChannels;
+	unsigned char* imgData;
+	bool hasAlphaChannel;
+
+public:
+	Sprite() = default;
+	Sprite(const std::string& sourceImagePath, int numOfUnits=1);
+
+	void Bind();
+	void Unbind();
+
+private:
+	void FindType(const std::string& fileName);
+};
+
+
+/*
+class Sprite
+{
+private:
+	Sprite* image;
 	Mesh* m_Mesh;
 
 	float svertices[32] = {
@@ -22,7 +47,11 @@ private:
 	};
 
 public:
-	Sprite(Texture2D* sourceImage, float size, GLenum drawType = GL_STATIC_DRAW);
+	Sprite(Sprite* sourceImage, float size, GLenum drawType = GL_STATIC_DRAW);
 
 	void Render(Shader* pShader);
+
+
+	void SetTransform(glm::vec3 pVecTransform);
 };
+*/

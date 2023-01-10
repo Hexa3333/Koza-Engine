@@ -18,31 +18,30 @@
     <ClCompile Include="src\Main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Mesh.cpp">
+    <ClCompile Include="src\Core\Gameobject.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Shader.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Texture2D.cpp">
+    <ClCompile Include="src\Core\Sprite.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Docs.htm" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Core\Mesh.h">
+    <ClInclude Include="src\Core\Gameobject.h">
       <Filter>src\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Shader.h">
       <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Texture2D.h">
+    <ClInclude Include="src\Core\Sprite.h">
       <Filter>src\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Window.h">
@@ -51,9 +50,5 @@
     <ClInclude Include="src\Core\Config.h">
       <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\FileType.h">
-      <Filter>src\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\Sprite.h" />
   </ItemGroup>
 </Project>

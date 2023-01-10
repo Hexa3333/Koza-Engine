@@ -15,8 +15,8 @@
 #include "Core/Config.h"
 #include "Core/Window.h"
 #include "Core/Shader.h"
-#include "Core/Texture2D.h"
-#include "Core/Mesh.h"
+#include "Core/Sprite.h"
+#include "Core/Gameobject.h"
 #include "Core/Sprite.h"
 
 int main(void)
@@ -40,10 +40,8 @@ int main(void)
         1, 2, 3,    // second triangle
     };
 
-    Texture2D* textureParan2 = new Texture2D("res/paran2.png");
-    Texture2D* textureParan1 = new Texture2D("res/paran1.png");
-
-    Sprite* portakal = new Sprite(textureParan2, 0.5f);
+    Sprite* spriteParan1 = new Sprite("res/paran1.png");
+    Gameobject* portakal = new Gameobject(new Sprite("res/paran1.png"));
 
     while (!glfwWindowShouldClose(window.getWindow()))
     {
