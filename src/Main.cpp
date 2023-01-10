@@ -38,7 +38,7 @@ int main(void)
     unsigned int indices[] = {  // note that we start from 0!
         0, 1, 3,   // first triangle
         1, 2, 3,    // second triangle
-    };
+    };                                                                                                                                                                                                                                                                                  
 
     Sprite* spriteParan1 = new Sprite("res/paran1.png");
     Gameobject* portakal = new Gameobject(new Sprite("res/paran1.png"));
