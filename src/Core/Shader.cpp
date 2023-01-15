@@ -88,9 +88,6 @@ void Shader::CreateFromFile(const std::string& vertexFilePath, const std::string
 	vertexSS << vertexFile.rdbuf();
 	fragmentSS << fragmentFile.rdbuf();
 
-	vertexFile.close();
-	fragmentFile.close();
-
 	Create(vertexSS.str(), fragmentSS.str());
 }
 

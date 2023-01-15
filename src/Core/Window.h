@@ -9,7 +9,6 @@ struct Window
 private:
 	GLFWwindow* window;
 
-
 	std::vector<int> Hints = {
 		GLFW_CONTEXT_VERSION_MAJOR, 4,
 		GLFW_CONTEXT_VERSION_MINOR, 0,

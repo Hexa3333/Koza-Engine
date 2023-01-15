@@ -11,7 +11,7 @@
 *   Therefore there is no color value and if you load vertices that
 *   contain color values it won't work the way you'd expect.    
 
-*   And to fix many more...
+*   And to remodify:
 * 
 *   - Modify the Stride
 *   - Send the view matrix
@@ -32,36 +32,6 @@ static unsigned int defaultSpriteIndices[6] = {  // note that we start from 0!
     1, 2, 3    // second triangle
 };
 
-
-// Siktir et demeyi tercih ediyorum.
-/*
-Gameobject::Gameobject(float* vertices, unsigned int* indices, int sizeVertices, int sizeIndices, GLenum drawType)
-{
-    this->sizeIndices = sizeIndices;
-
-	glGenVertexArrays(1, &VAO);
-	glBindVertexArray(VAO);
-
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices[0]) * (sizeVertices / sizeof(float)), vertices, drawType);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices[0]) * (sizeIndices / sizeof(int)), indices, drawType);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, Hx_STRIDE, nullptr);
-    glEnableVertexAttribArray(0); // 0 because (location 0), as i've noted 3 lines above
-
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, Hx_STRIDE, (void*)(3 * sizeof(float))); // Last argument is the offset (color is the fourth)
-    glEnableVertexAttribArray(1);
-
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
-
-}
-*/
 
 Gameobject::Gameobject(Sprite* pSprite, GLenum drawType)
     : sprite(*pSprite)
