@@ -1,4 +1,5 @@
 #include "Shader.h"
+#include "Globals.h"
 
 #include <iostream>
 #include <fstream>
@@ -80,13 +81,26 @@ void Shader::CreateFromFile(const std::string& vertexFilePath, const std::string
 	std::ostringstream vertexSS;
 	std::ostringstream fragmentSS;
 
-	if (!vertexFile.is_open() || !fragmentFile.is_open())
+	if (!vertexFile.is_open())
 	{
-		std::cerr << "[!] Failed to read file containing shader source at: [ID\'s not implemented yet]" << std::endl;
+		std::cerr << "[!] Failed to read file containing a vertex shader source." << std::endl
+			<< "	->	[*] Reverting to the default vertex shader source." << std::endl;
+		vertexSS << GLOBAL::DEFAULT_VERTEX_SHADER;
 	}
+	else vertexSS << vertexFile.rdbuf();
+	
+	if (!fragmentFile.is_open())
+	{
+		std::cerr << "[!] Failed to read file containing a fragment shader source." << std::endl
+				  << "	->	[*] Reverting to the default fragment shader source." << std::endl;
+		fragmentSS << GLOBAL::DEFAULT_FRAGMENT_SHADER;
+	}
+	else fragmentSS << fragmentFile.rdbuf();
 
-	vertexSS << vertexFile.rdbuf();
-	fragmentSS << fragmentFile.rdbuf();
+	// If all goes well, this plays out:
+	//
+	// vertexSS << vertexFile.rdbuf();
+	// fragmentSS << fragmentFile.rdbuf();
 
 	Create(vertexSS.str(), fragmentSS.str());
 }

@@ -1,4 +1,3 @@
-#include "Config.h"
 #include "Gameobject.h"
 
 #include <iostream>
@@ -32,6 +31,7 @@ static unsigned int defaultSpriteIndices[6] = {  // note that we start from 0!
     1, 2, 3    // second triangle
 };
 
+static GLsizei Stride = (5 * sizeof(float));
 
 Gameobject::Gameobject(Sprite* pSprite, GLenum drawType)
     : sprite(*pSprite)
@@ -49,11 +49,10 @@ Gameobject::Gameobject(Sprite* pSprite, GLenum drawType)
 
     glBufferData(GL_ARRAY_BUFFER, sizeof(defaultSpriteVertices[0]) * (sizeof(defaultSpriteVertices) / sizeof(float)), defaultSpriteVertices, drawType);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(defaultSpriteIndices[0]) * (sizeof(defaultSpriteIndices) / sizeof(int)), defaultSpriteIndices, drawType);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, Hx_STRIDE, nullptr);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, Stride, nullptr);
     glEnableVertexAttribArray(0); // 0 because (location 0), as i've noted 3 lines above
 
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, Hx_STRIDE, (void*)(3 * sizeof(float))); // Last argument is the offset (color is the fourth)
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, Stride, (void*)(3 * sizeof(float))); // Last argument is the offset (color is the fourth)
     glEnableVertexAttribArray(1);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);

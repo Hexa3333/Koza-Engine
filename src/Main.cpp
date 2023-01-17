@@ -1,4 +1,3 @@
-
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb/stb_image.h>
 
@@ -12,7 +11,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Core/Config.h"
+#include "Core/Globals.h"
 #include "Core/Window.h"
 #include "Core/Shader.h"
 #include "Core/Sprite.h"
@@ -25,7 +24,7 @@ int main(void)
     stbi_set_flip_vertically_on_load(true);
 
     Shader* basicShader = new Shader();
-    basicShader->CreateFromFile("res/Shaders/defaultV.shader", "res/Shaders/defaultF.shader");
+    basicShader->CreateFromFile("res/Shaders/myVert.shader", "res/Shaders/myFrag.shader");
 
     Gameobject* portakal = new Gameobject(new Sprite("res/paran2.png"));
     

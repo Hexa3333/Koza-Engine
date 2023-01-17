@@ -3,14 +3,13 @@
 
 #include <ostream>
 #include <functional>
-#include "Config.h"
+#include "Globals.h"
 
 class Sprite
 {
 private:
 	unsigned int textureOBJ[15];
 	
-	std::string sourceImagePath;
 	int imgWidth, imgHeight, imgNumOfNormalChannels;
 	unsigned char* imgData;
 	bool hasAlphaChannel;

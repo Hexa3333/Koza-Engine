@@ -6,8 +6,16 @@
 Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multiple textures)*/)
 {
 	imgData = stbi_load(sourceImagePath.c_str(), &imgWidth, &imgHeight, &imgNumOfNormalChannels, 0);
-	this->sourceImagePath = sourceImagePath;
-	FindType(sourceImagePath);
+	if (imgData == NULL)
+	{
+		imgData = stbi_load("missing.jpg", &imgWidth, &imgHeight, &imgNumOfNormalChannels, 0);
+		std::cerr << "Sprite instance " << this << " has failed to read a sprite(s)." << std::endl;
+		hasAlphaChannel = false; // "missing.jpg" does not have an alpha channel.
+	}
+	else
+	{
+		FindType(sourceImagePath);
+	}
 
 	glGenTextures(1, &textureOBJ[0]);
 	glBindTexture(GL_TEXTURE_2D, textureOBJ[0]);
@@ -18,12 +26,8 @@ Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multipl
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	if (imgData)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgWidth, imgHeight, GL_FALSE, hasAlphaChannel ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgData);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else std::cerr << "Failed to read texture!" << std::endl;
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgWidth, imgHeight, GL_FALSE, hasAlphaChannel ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgData);
+	glGenerateMipmap(GL_TEXTURE_2D);
 
 	stbi_image_free(imgData);
 

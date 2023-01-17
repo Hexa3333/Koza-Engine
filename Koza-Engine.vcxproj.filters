@@ -47,8 +47,7 @@
     <ClInclude Include="src\Core\Window.h">
       <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Config.h">
-      <Filter>src\Core</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Core\Globals.h" />
+    <ClInclude Include="src\Core\Renderer.h" />
   </ItemGroup>
 </Project>
