@@ -17,6 +17,7 @@ private:
 public:
 	Sprite() = default;
 	Sprite(const std::string& sourceImagePath, int numOfUnits=1);
+	~Sprite();
 
 	void Bind();
 	void Unbind();

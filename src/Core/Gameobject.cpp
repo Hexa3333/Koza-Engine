@@ -4,6 +4,7 @@
 #include <string>
 #include "Renderer.h"
 #include <GLFW/glfw3.h>
+using namespace Kz;
 
 /*
 
@@ -18,7 +19,7 @@
 
 */
 
-// Default 2D Vertices
+
 
 static float defaultSpriteVertices[32] = {
     //    VERTICES          // TEXTURE
@@ -35,9 +36,9 @@ static unsigned int defaultSpriteIndices[6] = {  // note that we start from 0!
 static GLsizei Stride = (5 * sizeof(float));
 
 Gameobject::Gameobject(Sprite* sprite, Shader* shader, GLenum drawType)
-    : sizeIndices(sizeof(defaultSpriteIndices)), sprite(*sprite), ARenderAble(shader)
+    : sizeIndices(sizeof(defaultSpriteIndices)), sprite(*sprite), IRenderAble(shader)
 {
-    Renderer::INST().Entities.push_back(this);
+    Renderer::MAIN().Entities.push_back(this);
 
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
@@ -58,6 +59,7 @@ Gameobject::Gameobject(Sprite* sprite, Shader* shader, GLenum drawType)
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+
 }
 void Gameobject::Render(Shader* shader)
 {
@@ -77,7 +79,7 @@ Gameobject::~Gameobject()
 {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
-    glDeleteBuffers(1, &EBO);
+
 }
 
 void Gameobject::TickUniforms(Shader* pShader)

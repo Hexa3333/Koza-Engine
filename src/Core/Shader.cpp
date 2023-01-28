@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstring>
+using namespace Kz;
 
 /*
 *	TODO: 
@@ -90,7 +91,7 @@ void Shader::CreateFromFile(const std::string& vertexFilePath, const std::string
 	{
 		std::cerr << "[!] Failed to read file containing a vertex shader source." << std::endl
 			<< "	->	[*] Reverting to the default vertex shader source." << std::endl;
-		vertexSS << GLOBAL::DEFAULT_VERTEX_SHADER;
+		vertexSS << Kz_Globals::DEFAULT_VERTEX_SHADER;
 	}
 	else vertexSS << vertexFile.rdbuf();
 	
@@ -98,7 +99,7 @@ void Shader::CreateFromFile(const std::string& vertexFilePath, const std::string
 	{
 		std::cerr << "[!] Failed to read file containing a fragment shader source." << std::endl
 				  << "	->	[*] Reverting to the default fragment shader source." << std::endl;
-		fragmentSS << GLOBAL::DEFAULT_FRAGMENT_SHADER;
+		fragmentSS << Kz_Globals::DEFAULT_FRAGMENT_SHADER;
 	}
 	else fragmentSS << fragmentFile.rdbuf();
 

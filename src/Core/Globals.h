@@ -2,7 +2,7 @@
 #include <iostream>
 #include <GL/glew.h>
 
-namespace GLOBAL {
+namespace Kz_Globals {
 
 	const std::string DEFAULT_VERTEX_SHADER = "\n\
 		#version 400 core\n\

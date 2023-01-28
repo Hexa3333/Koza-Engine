@@ -156,7 +156,7 @@
     <ClInclude Include="src\Core\Application.h" />
     <ClInclude Include="src\Core\Gameobject.h" />
     <ClInclude Include="src\Core\Globals.h" />
-    <ClInclude Include="src\Core\ARenderAble.h" />
+    <ClInclude Include="src\Core\IRenderAble.h" />
     <ClInclude Include="src\Core\Renderer.h" />
     <ClInclude Include="src\Core\Shader.h" />
     <ClInclude Include="src\Core\Sprite.h" />

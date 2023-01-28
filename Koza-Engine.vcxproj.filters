@@ -30,6 +30,7 @@
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Docs.htm" />
@@ -49,5 +50,7 @@
     </ClInclude>
     <ClInclude Include="src\Core\Globals.h" />
     <ClInclude Include="src\Core\Renderer.h" />
+    <ClInclude Include="src\Core\Application.h" />
+    <ClInclude Include="src\Core\IRenderAble.h" />
   </ItemGroup>
 </Project>

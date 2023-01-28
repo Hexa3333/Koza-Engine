@@ -3,25 +3,28 @@
 #include "GL/glew.h"
 #include <string>
 
-class Shader
+namespace Kz
 {
+	class Shader
+	{
 
-private:
-	unsigned int vertexShader, fragmentShader;
-	unsigned int shaderProgram;
+	private:
+		unsigned int vertexShader, fragmentShader;
+		unsigned int shaderProgram;
 
-public:
-	Shader();
-	Shader(const std::string& vertexFilePath, const std::string& fragmentFilePath);
-	~Shader();
+	public:
+		Shader();
+		Shader(const std::string& vertexFilePath, const std::string& fragmentFilePath);
+		~Shader();
 
-	void Use();
+		void Use();
 
-	template<typename T> void sendUniform(const std::string& variableName, T value);
+		template<typename T> void sendUniform(const std::string& variableName, T value);
 
-public:
-	void Create(const std::string& vertexShaderSource, const std::string& fragmentShaderSource);
-	void CreateFromFile(const std::string& vertexFilePath, const std::string& fragmentFilePath);
+	public:
+		void Create(const std::string& vertexShaderSource, const std::string& fragmentShaderSource);
+		void CreateFromFile(const std::string& vertexFilePath, const std::string& fragmentFilePath);
 	
-	unsigned int getShaderProgram();
-};
+		unsigned int getShaderProgram();
+	};
+}

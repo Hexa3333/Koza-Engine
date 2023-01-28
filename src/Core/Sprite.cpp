@@ -37,6 +37,11 @@ Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multipl
 void Sprite::Bind() { glBindTexture(GL_TEXTURE_2D, textureOBJ[0]); }
 void Sprite::Unbind() { glBindTexture(GL_TEXTURE_2D, 0); }
 
+Sprite::~Sprite()
+{
+	glDeleteTextures(1, &textureOBJ[0]);
+}
+
 /*
 Sprite::Sprite(Sprite* sourceImage, float size, GLenum drawType)
 {

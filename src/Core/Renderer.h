@@ -1,23 +1,27 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "ARenderAble.h"
+#include "IRenderAble.h"
 #include "Gameobject.h"
 
-class Renderer
+namespace Kz
 {
-private:
-	Renderer() = default;
-
-public:
-	static Renderer& INST()
+	class Renderer
 	{
-		static Renderer _instance;
-		return _instance;
-	}
+	private:
+		Renderer() = default;
 
-	std::vector<ARenderAble*> Entities;
+	public:
+		static Renderer& MAIN()
+		{
+			static Renderer _instance;
+			return _instance;
+		}
 
-	void Init();
-	void Run();
-};
+		std::vector<IRenderAble*> Entities;
+
+		void Init();
+		void Run();
+		void Kill();
+	};
+}

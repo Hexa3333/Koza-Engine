@@ -14,7 +14,7 @@
 #include "Core/Shader.h"
 #include "Core/Sprite.h"
 #include "Core/Gameobject.h"
-#include "Core/Sprite.h"
+using namespace Kz;
 
 // TODO:
 // Default shader which takes position data
@@ -27,26 +27,27 @@ int main(void)
 
     Shader* basicShader = new Shader("res/Shaders/myVert.shader", "res/Shaders/myFrag.shader");
     
-    Gameobject* animeGirl = new Gameobject(new Sprite("res/paran1.png"));
-    Gameobject* orange = new Gameobject(new Sprite("res/paran2.png"));
+    std::unique_ptr<Gameobject> grill = std::make_unique<Gameobject>(new Sprite("res/paran1.png"));
+    std::unique_ptr<Gameobject> orange = std::make_unique<Gameobject>(new Sprite("res/paran2.png"));
+    std::unique_ptr<Gameobject> napoleon = std::make_unique<Gameobject>(new Sprite("res/napoleon.jpg"));
+    std::unique_ptr<Gameobject> container = std::make_unique<Gameobject>(new Sprite("res/container.jpg"));
 
+    int indexer = 0;
     while (!glfwWindowShouldClose(Application::GetMainWindow()))
     {
         glClear(GL_COLOR_BUFFER_BIT);
-        if (glfwGetKey(Application::GetMainWindow(), GLFW_KEY_ESCAPE)) break;
-        if (glfwGetKey(Application::GetMainWindow(), GLFW_KEY_SPACE))
-        {
-            Renderer::INST().Entities.pop_back();
-        }
+        if (glfwGetKey(Application::GetMainWindow(), GLFW_KEY_ESCAPE)) goto exit;
 
-        Renderer::INST().Run();
+        Renderer::MAIN().Run();
 
         glfwSwapBuffers(Application::GetMainWindow());
         glfwPollEvents();
     }
 
+exit:
     delete basicShader;
-    //delete portakal;
+
+    Renderer::MAIN().Kill();
 
     glfwTerminate();
     return 0;
