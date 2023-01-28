@@ -19,7 +19,12 @@
 * 
 */
 
-Shader::Shader(){}
+Shader::Shader() {}
+
+Shader::Shader(const std::string& vertexFilePath, const std::string& fragmentFilePath)
+{
+	CreateFromFile(vertexFilePath, fragmentFilePath);
+}
 
 void Shader::Create(const std::string& vertexShaderSource, const std::string& fragmentShaderSource)
 {
@@ -96,11 +101,6 @@ void Shader::CreateFromFile(const std::string& vertexFilePath, const std::string
 		fragmentSS << GLOBAL::DEFAULT_FRAGMENT_SHADER;
 	}
 	else fragmentSS << fragmentFile.rdbuf();
-
-	// If all goes well, this plays out:
-	//
-	// vertexSS << vertexFile.rdbuf();
-	// fragmentSS << fragmentFile.rdbuf();
 
 	Create(vertexSS.str(), fragmentSS.str());
 }

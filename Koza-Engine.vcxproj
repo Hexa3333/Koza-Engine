@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Gameobject.cpp" />
+    <ClCompile Include="src\Core\Renderer.cpp" />
     <ClCompile Include="src\Core\Shader.cpp" />
     <ClCompile Include="src\Core\Sprite.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
@@ -152,8 +153,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\Application.h" />
     <ClInclude Include="src\Core\Gameobject.h" />
     <ClInclude Include="src\Core\Globals.h" />
+    <ClInclude Include="src\Core\ARenderAble.h" />
     <ClInclude Include="src\Core\Renderer.h" />
     <ClInclude Include="src\Core\Shader.h" />
     <ClInclude Include="src\Core\Sprite.h" />

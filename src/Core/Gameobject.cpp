@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "Renderer.h"
 #include <GLFW/glfw3.h>
 
 /*
@@ -33,11 +34,10 @@ static unsigned int defaultSpriteIndices[6] = {  // note that we start from 0!
 
 static GLsizei Stride = (5 * sizeof(float));
 
-Gameobject::Gameobject(Sprite* pSprite, GLenum drawType)
-    : sprite(*pSprite)
+Gameobject::Gameobject(Sprite* sprite, Shader* shader, GLenum drawType)
+    : sizeIndices(sizeof(defaultSpriteIndices)), sprite(*sprite), ARenderAble(shader)
 {
-    //memcpy(sprite, &pSprite, sizeof(pSprite));
-    sizeIndices = sizeof(defaultSpriteIndices);
+    Renderer::INST().Entities.push_back(this);
 
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
@@ -59,9 +59,9 @@ Gameobject::Gameobject(Sprite* pSprite, GLenum drawType)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 }
-void Gameobject::Render(Shader* pShader)
+void Gameobject::Render(Shader* shader)
 {
-    pShader->Use();
+    shader->Use();
     sprite.Bind();
 
     glBindVertexArray(VAO);
@@ -70,10 +70,10 @@ void Gameobject::Render(Shader* pShader)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    TickUniforms(pShader);
+    TickUniforms(shader);
 }
 
-void Gameobject::Kill()
+Gameobject::~Gameobject()
 {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);

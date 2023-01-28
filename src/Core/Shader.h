@@ -12,6 +12,7 @@ private:
 
 public:
 	Shader();
+	Shader(const std::string& vertexFilePath, const std::string& fragmentFilePath);
 	~Shader();
 
 	void Use();

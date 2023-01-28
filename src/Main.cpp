@@ -1,46 +1,52 @@
-#define STB_IMAGE_IMPLEMENTATION
-#include <stb/stb_image.h>
-
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>
 #include <algorithm>
+#include <format>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Core/Globals.h"
-#include "Core/Window.h"
+#include "Core/Application.h"
+#include "Core/Renderer.h"
 #include "Core/Shader.h"
 #include "Core/Sprite.h"
 #include "Core/Gameobject.h"
 #include "Core/Sprite.h"
 
+// TODO:
+// Default shader which takes position data
+// and displays them in a missing texture format for
+// gizmos and stuff
+
 int main(void)
 {
-    Window window("Koza Engine", 720, 720);
-    stbi_set_flip_vertically_on_load(true);
+    Application::Init(std::format("Koza Engine - {} | {}", __DATE__, __TIME__));
 
-    Shader* basicShader = new Shader();
-    basicShader->CreateFromFile("res/Shaders/myVert.shader", "res/Shaders/myFrag.shader");
-
-    Gameobject* portakal = new Gameobject(new Sprite("res/paran2.png"));
+    Shader* basicShader = new Shader("res/Shaders/myVert.shader", "res/Shaders/myFrag.shader");
     
-    while (!glfwWindowShouldClose(window.getWindow()))
+    Gameobject* animeGirl = new Gameobject(new Sprite("res/paran1.png"));
+    Gameobject* orange = new Gameobject(new Sprite("res/paran2.png"));
+
+    while (!glfwWindowShouldClose(Application::GetMainWindow()))
     {
         glClear(GL_COLOR_BUFFER_BIT);
-        if (glfwGetKey(window.getWindow(), GLFW_KEY_ESCAPE)) break;
+        if (glfwGetKey(Application::GetMainWindow(), GLFW_KEY_ESCAPE)) break;
+        if (glfwGetKey(Application::GetMainWindow(), GLFW_KEY_SPACE))
+        {
+            Renderer::INST().Entities.pop_back();
+        }
 
-        portakal->Render(basicShader);
+        Renderer::INST().Run();
 
-
-        glfwSwapBuffers(window.getWindow());
+        glfwSwapBuffers(Application::GetMainWindow());
         glfwPollEvents();
     }
 
     delete basicShader;
+    //delete portakal;
 
     glfwTerminate();
     return 0;
