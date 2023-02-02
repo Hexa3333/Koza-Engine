@@ -1,6 +1,8 @@
 #include "Window.h"
 #include <iostream>
 
+using namespace Kz_Core;
+
 Window::Window(const char* Name, int w, int h)
 {
     if (!glfwInit()) std::exit(-1);
@@ -26,7 +28,10 @@ Window::Window(const char* Name, int w, int h)
     parseHintsGLFW(Hints);
 }
 
-
+void Window::SwapBuffers()
+{
+    glfwSwapBuffers(this->window);
+}
 
 void Window::parseHintsGLFW(std::vector<int> Hints)
 {

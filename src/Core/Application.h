@@ -5,37 +5,47 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
 
-using namespace Kz_Core;
-class Application
+namespace Kz_Core
 {
-private:
-	Application() = default;
-
-	Window* window;
-public:
-	static Application& INST()
+	class Application
 	{
-		static Application _instance;
-		return _instance;
-	}
+	private:
+		Application() = default;
+		Window* window;
+		static Application& INST()
+		{
+			static Application _instance;
+			return _instance;
+		}
 
-	static GLFWwindow* GetMainWindow()
-	{
-		return INST().window->getWindow();
-	}
+	public:
 
-	static void Init(const std::string& appName)
-	{
-		INST().window = new Window(appName.c_str(), 720, 720);
-		stbi_set_flip_vertically_on_load(true);
-	}
+		static GLFWwindow* GetMainWindow()
+		{
+			return INST().window->getWindow();
+		}
 
-	static void Run()
-	{
-		Renderer::MAIN().Run();
-	}
+		static void Init(const std::string& appName)
+		{
+			INST().window = new Window(appName.c_str(), 720, 720);
+			stbi_set_flip_vertically_on_load(true);
+		}
 
-public:
-	Application(const Application&) = delete;
-};
+		static void Run()
+		{
+			Renderer::MAIN().Run();
 
+			INST().window->SwapBuffers();
+			glfwPollEvents();
+		}
+
+		static void Kill()
+		{
+			Renderer::MAIN().Kill();
+			glfwTerminate();
+		}
+
+	public:
+		Application(const Application&) = delete;
+	};
+}

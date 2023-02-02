@@ -4,24 +4,28 @@
 #include <glfw3.h>
 #include <vector>
 
-struct Window
+namespace Kz_Core
 {
-private:
-	GLFWwindow* window;
+	struct Window
+	{
+	private:
+		GLFWwindow* window;
 
-	std::vector<int> Hints = {
-		GLFW_CONTEXT_VERSION_MAJOR, 4,
-		GLFW_CONTEXT_VERSION_MINOR, 0,
-		GLFW_OPENGL_CORE_PROFILE, GLFW_TRUE};
+		std::vector<int> Hints = {
+			GLFW_CONTEXT_VERSION_MAJOR, 4,
+			GLFW_CONTEXT_VERSION_MINOR, 0,
+			GLFW_OPENGL_CORE_PROFILE, GLFW_TRUE};
 
-public:
+	public:
 
-	Window(const char* Name, int w, int h);
+		Window(const char* Name, int w, int h);
+		void SwapBuffers();
 
-	GLFWwindow* getWindow() { return window; }
 	
-	unsigned int acc_width, acc_height;
-private:
-	void parseHintsGLFW(std::vector<int> Hints);
+		GLFWwindow* getWindow() { return window; }
 
-};
+	private:
+		void parseHintsGLFW(std::vector<int> Hints);
+
+	};
+}

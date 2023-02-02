@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+using namespace Kz_Core;
+
 Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multiple textures)*/)
 {
 	imgData = stbi_load(sourceImagePath.c_str(), &imgWidth, &imgHeight, &imgNumOfNormalChannels, 0);

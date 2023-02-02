@@ -30,32 +30,19 @@ int main(void)
     
     std::unique_ptr<Gameobject> grill = std::make_unique<Gameobject>(new Sprite("res/paran1.png"), basicShader);
     std::unique_ptr<Gameobject> orange = std::make_unique<Gameobject>(new Sprite("res/paran2.png"), basicShader);
-    std::unique_ptr<Gameobject> napoleon = std::make_unique<Gameobject>(new Sprite("res/napoleon.jpg"), basicShader);
-    std::unique_ptr<Gameobject> container = std::make_unique<Gameobject>(new Sprite("res/container.jpg"), basicShader);
 
-    int indexer = 0;
+
     while (!glfwWindowShouldClose(Application::GetMainWindow()))
     {
         glClear(GL_COLOR_BUFFER_BIT);
         if (glfwGetKey(Application::GetMainWindow(), GLFW_KEY_ESCAPE)) goto exit;
-        if (glfwGetKey(Application::GetMainWindow(), GLFW_KEY_SPACE))
-        {
-            if (Renderer::MAIN().Entities.size() <= 0) goto exit;
-            Renderer::MAIN().Entities.pop_back();
-        }
-
 
         Application::Run();
-
-        glfwSwapBuffers(Application::GetMainWindow());
-        glfwPollEvents();
     }
 
 exit:
     delete basicShader;
 
-    Renderer::MAIN().Kill();
-
-    glfwTerminate();
+    Application::Kill();
     return 0;
 }

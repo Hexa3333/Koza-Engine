@@ -4,14 +4,8 @@
     <Filter Include="src">
       <UniqueIdentifier>{0f93f45f-701f-40f7-8cd8-7483458c30c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="res">
-      <UniqueIdentifier>{fb91b4b5-d0c3-4841-a12c-d56d517cf8e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Core">
       <UniqueIdentifier>{78d59cc8-c895-45f5-a4a4-893c9ad9a904}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Utility">
-      <UniqueIdentifier>{7a550309-fe6d-4c9b-a58e-f7e78f46a77c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
