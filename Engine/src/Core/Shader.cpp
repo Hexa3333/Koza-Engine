@@ -112,7 +112,6 @@ Shader::~Shader()
 	glDeleteShader(fragmentShader);
 }
 
-
 void Shader::Use(){ glUseProgram(shaderProgram); }
 
 // TODO:

@@ -5,26 +5,29 @@
 #include <functional>
 #include "Globals.h"
 
-class Sprite
+namespace Kz_Core
 {
-private:
-	unsigned int textureOBJ[15];
+	class Sprite
+	{
+	private:
+		unsigned int textureOBJ[15];
 	
-	int imgWidth, imgHeight, imgNumOfNormalChannels;
-	unsigned char* imgData;
-	bool hasAlphaChannel;
+		int imgWidth, imgHeight, imgNumOfNormalChannels;
+		unsigned char* imgData;
+		bool hasAlphaChannel;
 
-public:
-	Sprite() = default;
-	Sprite(const std::string& sourceImagePath, int numOfUnits=1);
-	~Sprite();
+	public:
+		Sprite() = default;
+		Sprite(const std::string& sourceImagePath, int numOfUnits=1);
+		~Sprite();
 
-	void Bind();
-	void Unbind();
+		void Bind();
+		void Unbind();
 
-private:
-	void FindType(const std::string& fileName);
-};
+	private:
+		void FindType(const std::string& fileName);
+	};
+}
 
 
 /*

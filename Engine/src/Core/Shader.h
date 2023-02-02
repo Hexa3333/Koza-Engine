@@ -2,22 +2,22 @@
 
 #include "glew.h"
 #include <string>
-#include <vector>
 
 namespace Kz_Core
 {
 	class Shader
 	{
-	private:
 
+	private:
 		unsigned int vertexShader, fragmentShader;
 		unsigned int shaderProgram;
 
 	public:
 		Shader();
 		Shader(const std::string& vertexFilePath, const std::string& fragmentFilePath);
-		void Use();
 		~Shader();
+
+		void Use();
 
 		template<typename T> void sendUniform(const std::string& variableName, T value);
 

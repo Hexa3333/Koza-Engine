@@ -28,10 +28,9 @@ Window::Window(const char* Name, int w, int h)
     parseHintsGLFW(Hints);
 }
 
-template<typename T>
-inline void Window::Clear(T param)
+void Window::SwapBuffers()
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glfwSwapBuffers(this->window);
 }
 
 void Window::parseHintsGLFW(std::vector<int> Hints)

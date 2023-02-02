@@ -1,8 +1,9 @@
 #include "Sprite.h"
-#define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 #include <iostream>
+
+using namespace Kz_Core;
 
 Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multiple textures)*/)
 {
@@ -42,23 +43,6 @@ Sprite::~Sprite()
 {
 	glDeleteTextures(1, &textureOBJ[0]);
 }
-
-/*
-Sprite::Sprite(Sprite* sourceImage, float size, GLenum drawType)
-{
-	image = sourceImage;
-	m_Mesh = new Mesh(svertices, sindices, sizeof(svertices), sizeof(sindices));
-	m_Mesh->model = glm::scale(m_Mesh->model, glm::vec3(size));
-}
-
-
-void Sprite::Render(Shader* pShader)
-{
-	image->Bind();
-	m_Mesh->Render(pShader);
-	image->Unbind();
-}
-*/
 
 void Sprite::FindType(const std::string& fileName)
 {

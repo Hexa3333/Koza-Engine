@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "Interfaces/IRenderAble.h"
+#include "IRenderAble.h"
 #include "Gameobject.h"
 
 namespace Kz_Core
@@ -17,10 +17,11 @@ namespace Kz_Core
 			static Renderer _instance;
 			return _instance;
 		}
+
 		std::vector<IRenderAble*> Entities;
 
 		void Init();
 		void Run();
-
+		void Kill();
 	};
 }

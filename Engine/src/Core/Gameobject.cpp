@@ -35,7 +35,6 @@ static unsigned int defaultSpriteIndices[6] = {  // note that we start from 0!
 
 static GLsizei Stride = (5 * sizeof(float));
 
-
 Gameobject::Gameobject(Sprite* sprite, Shader* shader, GLenum drawType)
     : sizeIndices(sizeof(defaultSpriteIndices)), sprite(*sprite), IRenderAble(shader)
 {
@@ -80,8 +79,8 @@ Gameobject::~Gameobject()
 {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
-}
 
+}
 
 void Gameobject::TickUniforms(Shader* pShader)
 {
