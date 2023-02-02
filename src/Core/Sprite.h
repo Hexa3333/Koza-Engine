@@ -1,5 +1,5 @@
 #pragma once
-#include <GL/glew.h>
+#include <glew.h>
 
 #include <ostream>
 #include <functional>

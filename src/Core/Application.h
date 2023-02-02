@@ -1,9 +1,11 @@
 #pragma once
 #include <iostream>
 #include "Window.h"
+#include "Renderer.h"
 #define STB_IMAGE_IMPLEMENTATION
-#include <stb/stb_image.h>
+#include <stb_image.h>
 
+using namespace Kz_Core;
 class Application
 {
 private:
@@ -28,6 +30,10 @@ public:
 		stbi_set_flip_vertically_on_load(true);
 	}
 
+	static void Run()
+	{
+		Renderer::MAIN().Run();
+	}
 
 public:
 	Application(const Application&) = delete;

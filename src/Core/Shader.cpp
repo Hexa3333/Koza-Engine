@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstring>
-using namespace Kz;
+using namespace Kz_Core;
 
 /*
 *	TODO: 

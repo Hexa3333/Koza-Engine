@@ -1,6 +1,6 @@
 #include "Renderer.h"
 #include <algorithm>
-using namespace Kz;
+using namespace Kz_Core;
 
 
 void Renderer::Init()

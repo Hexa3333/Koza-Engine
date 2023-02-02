@@ -1,9 +1,9 @@
 #pragma once
 
-#include "GL/glew.h"
+#include "glew.h"
 #include <string>
 
-namespace Kz
+namespace Kz_Core
 {
 	class Shader
 	{

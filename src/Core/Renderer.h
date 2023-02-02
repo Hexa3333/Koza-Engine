@@ -4,7 +4,7 @@
 #include "IRenderAble.h"
 #include "Gameobject.h"
 
-namespace Kz
+namespace Kz_Core
 {
 	class Renderer
 	{

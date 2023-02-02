@@ -3,8 +3,8 @@
 #include <iostream>
 #include <string>
 #include "Renderer.h"
-#include <GLFW/glfw3.h>
-using namespace Kz;
+#include <glfw3.h>
+using namespace Kz_Core;
 
 /*
 

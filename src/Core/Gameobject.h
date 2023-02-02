@@ -1,18 +1,18 @@
 #pragma once
 
-#include <GL/glew.h>
+#include <glew.h>
 #include "Shader.h"
 #include "Sprite.h"
 #include "IRenderAble.h"
 
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
+#include <glm.hpp>
+#include <gtc/matrix_transform.hpp>
+#include <gtc/type_ptr.hpp>
 #include "Globals.h"
 
 using namespace Kz_Globals;
 
-namespace Kz
+namespace Kz_Core
 {
 	class Gameobject : public IRenderAble
 	{
