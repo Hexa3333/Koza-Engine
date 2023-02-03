@@ -1,49 +1,76 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{0f93f45f-701f-40f7-8cd8-7483458c30c4}</UniqueIdentifier>
+    <Filter Include="Core">
+      <UniqueIdentifier>{2EB4837C-1AEB-840D-C3D7-6A10AFED000F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Core">
-      <UniqueIdentifier>{78d59cc8-c895-45f5-a4a4-893c9ad9a904}</UniqueIdentifier>
+    <Filter Include="Core\Debugging">
+      <UniqueIdentifier>{69E38DD7-55B1-81DD-3E45-F2032AB25D42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Interfaces">
+      <UniqueIdentifier>{C15F6EDC-2DEB-DBA0-36FC-5E95A20638A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Renderer">
+      <UniqueIdentifier>{948B5FDE-004C-DB14-C986-2492350620F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UserIncludes">
+      <UniqueIdentifier>{5B81CA5A-47E4-59FF-F069-92B5DCAB2582}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Core\Gameobject.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Shader.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Sprite.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Window.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Core\Debugging\Log.cpp" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="src\Core\Application.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Config.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Debugging\Log.h">
+      <Filter>Core\Debugging</Filter>
+    </ClInclude>
     <ClInclude Include="src\Core\Gameobject.h">
-      <Filter>src\Core</Filter>
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Globals.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Interfaces\IRenderAble.h">
+      <Filter>Core\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Renderer\Renderer.h">
+      <Filter>Core\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Shader.h">
-      <Filter>src\Core</Filter>
+      <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Sprite.h">
-      <Filter>src\Core</Filter>
+      <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Window.h">
-      <Filter>src\Core</Filter>
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Globals.h" />
-    <ClInclude Include="src\Core\Renderer\Renderer.h" />
-    <ClInclude Include="src\Core\Application.h" />
-    <ClInclude Include="src\Core\Interfaces\IRenderAble.h" />
-    <ClInclude Include="src\Core\Config.h" />
-    <ClInclude Include="src\UserIncludes\KozaEngine.h" />
-    <ClInclude Include="src\Core\Debugging\Log.h" />
+    <ClInclude Include="src\UserIncludes\KozaEngine.h">
+      <Filter>UserIncludes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Core\Debugging\Log.cpp">
+      <Filter>Core\Debugging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Gameobject.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Renderer\Renderer.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Shader.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Sprite.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Window.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
 </Project>

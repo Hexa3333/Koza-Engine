@@ -24,6 +24,8 @@ int main(void)
     
     Shader* basicShader = new Shader("../res/Shaders/myVert.shader", "../res/Shaders/myFrag.shader");
 
+    Gameobject* napoli = new Gameobject(new Sprite("../res/napoleon.jpg"));
+
     while (Application::GetAppShouldRun())
     {
         Application::Run();
