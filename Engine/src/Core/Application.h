@@ -5,7 +5,7 @@
 #include <glfw3.h>
 #include "Window.h"
 #include "Renderer/Renderer.h"
-#include "Log.h"
+#include "Debugging/Log.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 

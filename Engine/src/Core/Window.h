@@ -17,15 +17,19 @@ namespace Koza_Core
 			GLFW_OPENGL_CORE_PROFILE, GLFW_TRUE};
 
 	public:
+		static enum PROP
+		{
+			V_SYNC, RESIZABLE
+		};
 
-		Window(const char* Name, int w, int h);
+		Window(const char* Name, int w, int h, int numOfProperties=0, ...);
 		void SwapBuffers();
 
 	
-		inline GLFWwindow* getWindow() { return window; }
+		GLFWwindow* getWindow() { return window; }
 
 	private:
 		void parseHintsGLFW(std::vector<int> Hints);
-
+		void useProperty(PROP prop);
 	};
 }

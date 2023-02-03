@@ -23,7 +23,7 @@
     </ClCompile>
     <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Core\Log.cpp" />
+    <ClCompile Include="src\Core\Debugging\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Gameobject.h">
@@ -44,6 +44,6 @@
     <ClInclude Include="src\Core\Interfaces\IRenderAble.h" />
     <ClInclude Include="src\Core\Config.h" />
     <ClInclude Include="src\UserIncludes\KozaEngine.h" />
-    <ClInclude Include="src\Core\Log.h" />
+    <ClInclude Include="src\Core\Debugging\Log.h" />
   </ItemGroup>
 </Project>

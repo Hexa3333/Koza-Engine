@@ -6,7 +6,7 @@
 
 namespace Koza_Core
 {
-	class Log
+	static class Log
 	{
 
 	private:
