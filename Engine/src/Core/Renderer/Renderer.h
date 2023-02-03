@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "IRenderAble.h"
-#include "Gameobject.h"
+#include "../Interfaces/IRenderAble.h"
+#include "../Gameobject.h"
 
-namespace Kz_Core
+namespace Koza_Core
 {
 	class Renderer
 	{

@@ -1,7 +1,7 @@
 #include "Window.h"
 #include <iostream>
 
-using namespace Kz_Core;
+using namespace Koza_Core;
 
 Window::Window(const char* Name, int w, int h)
 {

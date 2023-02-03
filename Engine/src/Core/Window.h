@@ -4,7 +4,7 @@
 #include <glfw3.h>
 #include <vector>
 
-namespace Kz_Core
+namespace Koza_Core
 {
 	struct Window
 	{
@@ -22,7 +22,7 @@ namespace Kz_Core
 		void SwapBuffers();
 
 	
-		GLFWwindow* getWindow() { return window; }
+		inline GLFWwindow* getWindow() { return window; }
 
 	private:
 		void parseHintsGLFW(std::vector<int> Hints);

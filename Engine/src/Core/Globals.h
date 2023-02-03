@@ -1,8 +1,7 @@
 #pragma once
 #include <iostream>
-#include <glew.h>
 
-namespace Kz_Globals {
+namespace Koza_Globals {
 
 	const std::string DEFAULT_VERTEX_SHADER = "\n\
 		#version 400 core\n\

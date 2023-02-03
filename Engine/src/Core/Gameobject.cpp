@@ -2,9 +2,9 @@
 
 #include <iostream>
 #include <string>
-#include "Renderer.h"
+#include "Renderer/Renderer.h"
 #include <glfw3.h>
-using namespace Kz_Core;
+using namespace Koza_Core;
 
 /*
 

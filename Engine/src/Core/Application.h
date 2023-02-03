@@ -1,12 +1,21 @@
 #pragma once
-#include <iostream>
-#include "Window.h"
-#include "Renderer.h"
-#define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
+#include "Config.h"
 
-namespace Kz_Core
+#include <iostream>
+#include <glfw3.h>
+#include "Window.h"
+#include "Renderer/Renderer.h"
+#include "Log.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
+namespace Koza_Core
 {
+	void Testing()
+	{
+		std::cout << "Test successful.\n";
+	}
+
 	class Application
 	{
 	private:
@@ -17,16 +26,22 @@ namespace Kz_Core
 			static Application _instance;
 			return _instance;
 		}
-
-	public:
-
 		static GLFWwindow* GetMainWindow()
 		{
 			return INST().window->getWindow();
 		}
 
+	public:
+
+
+		static bool GetAppShouldRun()
+		{
+			return !glfwWindowShouldClose(GetMainWindow());
+		}
+
 		static void Init(const std::string& appName)
 		{
+			Log::Get().Init();
 			INST().window = new Window(appName.c_str(), 720, 720);
 			stbi_set_flip_vertically_on_load(true);
 		}

@@ -3,16 +3,16 @@
 #include "glew.h"
 #include "Shader.h"
 #include "Sprite.h"
-#include "IRenderAble.h"
+#include "Interfaces/IRenderAble.h"
 
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <gtc/type_ptr.hpp>
 #include "Globals.h"
 
-using namespace Kz_Globals;
+using namespace Koza_Globals;
 
-namespace Kz_Core
+namespace Koza_Core
 {
 	class Gameobject : public IRenderAble
 	{

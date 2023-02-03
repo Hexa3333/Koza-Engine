@@ -1,7 +1,7 @@
 #pragma once
-#include "Shader.h"
+#include "../Shader.h"
 
-namespace Kz_Core
+namespace Koza_Core
 {
 	class IRenderAble
 	{

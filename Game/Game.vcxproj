@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{df99ab96-8d56-4b78-972f-7bd4fb4c9174}</ProjectGuid>
-    <RootNamespace>KozaEngine</RootNamespace>
+    <ProjectGuid>{f7877a5b-e655-4cd6-be52-df25abfbcf6f}</ProjectGuid>
+    <RootNamespace>Game</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -82,16 +82,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>KOZA_PLATFORM_WINDOWS;KOZA_BUILD_DLL;_WINDLL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>KZ_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\include\spdlog\include;$(SolutionDir)Engine\include\stb;$(SolutionDir)Engine\include\glm;$(SolutionDir)Engine\include\GLFW;$(SolutionDir)Engine\include\GL</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\src\UserIncludes;$(SolutionDir)Engine\src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib/GLEW;$(SolutionDir)lib/GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,34 +97,29 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>KOZA_PLATFORM_WINDOWS;KOZA_BUILD_DLL;_WINDLL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>KZ_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\include\spdlog\include;$(SolutionDir)Engine\include\stb;$(SolutionDir)Engine\include\glm;$(SolutionDir)Engine\include\GLFW;$(SolutionDir)Engine\include\GL</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\src\UserIncludes;$(SolutionDir)Engine\src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib/GLEW;$(SolutionDir)lib/GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>KOZA_PLATFORM_WINDOWS;KOZA_BUILD_DLL;_WINDLL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>KZ_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\include\spdlog\include;$(SolutionDir)Engine\include\stb;$(SolutionDir)Engine\include\glm;$(SolutionDir)Engine\include\GLFW;$(SolutionDir)Engine\include\GL</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\src\UserIncludes;$(SolutionDir)Engine\src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Engine\lib\GLEW;$(SolutionDir)Engine\lib/GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,41 +128,25 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>KOZA_PLATFORM_WINDOWS;KOZA_BUILD_DLL;_WINDLL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>KZ_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\include\spdlog\include;$(SolutionDir)Engine\include\stb;$(SolutionDir)Engine\include\glm;$(SolutionDir)Engine\include\GLFW;$(SolutionDir)Engine\include\GL</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\src\UserIncludes;$(SolutionDir)Engine\src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Engine\lib\GLEW;$(SolutionDir)Engine\lib/GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Core\Log.cpp" />
-    <ClCompile Include="src\Core\Gameobject.cpp" />
-    <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\Core\Shader.cpp" />
-    <ClCompile Include="src\Core\Sprite.cpp" />
-    <ClCompile Include="src\Core\Window.cpp" />
-    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Game.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Core\Log.h" />
-    <ClInclude Include="src\Core\Application.h" />
-    <ClInclude Include="src\Core\Config.h" />
-    <ClInclude Include="src\Core\Gameobject.h" />
-    <ClInclude Include="src\Core\Globals.h" />
-    <ClInclude Include="src\Core\Interfaces\IRenderAble.h" />
-    <ClInclude Include="src\Core\Renderer\Renderer.h" />
-    <ClInclude Include="src\Core\Shader.h" />
-    <ClInclude Include="src\Core\Sprite.h" />
-    <ClInclude Include="src\Core\Window.h" />
-    <ClInclude Include="src\UserIncludes\KozaEngine.h" />
+    <ProjectReference Include="..\Engine\Koza-Engine.vcxproj">
+      <Project>{df99ab96-8d56-4b78-972f-7bd4fb4c9174}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

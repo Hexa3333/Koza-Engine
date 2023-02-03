@@ -3,6 +3,14 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# MyConfDirs
+.vs/
+bin/
+bin-int/
+
+#MyConfFiles
+
+
 # User-specific files
 *.rsuser
 *.suo

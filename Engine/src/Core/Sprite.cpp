@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-using namespace Kz_Core;
+using namespace Koza_Core;
 
 Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multiple textures)*/)
 {

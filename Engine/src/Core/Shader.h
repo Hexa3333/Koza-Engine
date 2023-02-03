@@ -3,7 +3,7 @@
 #include "glew.h"
 #include <string>
 
-namespace Kz_Core
+namespace Koza_Core
 {
 	class Shader
 	{

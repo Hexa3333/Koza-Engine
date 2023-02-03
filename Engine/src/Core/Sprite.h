@@ -5,7 +5,7 @@
 #include <functional>
 #include "Globals.h"
 
-namespace Kz_Core
+namespace Koza_Core
 {
 	class Sprite
 	{
