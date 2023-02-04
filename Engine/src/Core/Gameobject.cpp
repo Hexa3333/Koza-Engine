@@ -62,11 +62,6 @@ Gameobject::Gameobject(Sprite* sprite, Shader* shader, GLenum drawType)
 
 }
 
-void Gameobject::ToggleRender()
-{
-    IsBeingRendered = !IsBeingRendered;
-}
-
 void Gameobject::Render(Shader* shader)
 {
     shader->Use();

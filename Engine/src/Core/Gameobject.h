@@ -33,7 +33,6 @@ namespace Koza_Core
 		~Gameobject();
 	
 		
-		void ToggleRender() override;
 		void Render(Shader* shader) override;
 	private:
 		void TickUniforms(Shader* pShader);

@@ -7,7 +7,7 @@ namespace Koza_Core
 	{
 	public:
 		bool IsBeingRendered = true;
-		virtual void ToggleRender() = 0;
+		void ToggleRender() { IsBeingRendered = !IsBeingRendered; }
 
 		Shader* m_Shader;
 		IRenderAble(Shader* shader) : m_Shader(shader) {}
