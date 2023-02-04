@@ -18,7 +18,7 @@ namespace Koza_Core
 			return _instance;
 		}
 
-		std::vector<IRenderAble*> Entities;
+		static std::vector<IRenderAble*> Entities;
 
 		void Init();
 		void Run();

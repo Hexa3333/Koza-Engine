@@ -2,6 +2,7 @@
 #include <algorithm>
 using namespace Koza_Core;
 
+std::vector<IRenderAble*> Renderer::Entities;
 
 void Renderer::Init()
 {
@@ -19,5 +20,7 @@ void Renderer::Run()
 
 void Renderer::Kill()
 {
+	for (auto obj : Entities)
+		delete obj;
 	Entities.clear();
 }

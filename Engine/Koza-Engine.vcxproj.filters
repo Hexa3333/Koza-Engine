@@ -45,6 +45,7 @@
     <ClInclude Include="src\UserIncludes\KozaEngine.h">
       <Filter>UserIncludes</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Gameobject.cpp">
@@ -62,5 +63,6 @@
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\Input.cpp" />
   </ItemGroup>
 </Project>
