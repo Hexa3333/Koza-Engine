@@ -34,7 +34,7 @@ project "Koza-Engine"
 		"Engine/src/**.cpp"
 	}
 	
-	libdirs { "Engine/lib/GLEW", "Engine/lib/GLFW" }
+	libdirs { "Game/lib/GLEW", "Game/lib/GLFW" }
 	links { "opengl32", "glew32", "glfw3" }
 	
 	includedirs
@@ -59,7 +59,7 @@ project "Game"
 		"Game/src/**.h"
 	}
 	
-	libdirs { "Engine/lib/GLEW", "Engine/lib/GLFW", "Game/bin" }
+	libdirs { "Game/lib/GLEW", "Game/lib/GLFW", "Game/bin" }
 	links { "opengl32", "glew32", "glfw3", "Koza-Engine" }
 
 	includedirs
