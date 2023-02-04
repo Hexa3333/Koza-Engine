@@ -2,19 +2,16 @@
 #include "Config.h"
 
 #include <iostream>
+#include <glew.h>
 #include <glfw3.h>
 #include "Window.h"
+#include "Debugging/Log.h"
 #include "Renderer/Renderer.h"
 #include "Debugging/Log.h"
-#define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 namespace Koza_Core
 {
-	void Testing()
-	{
-		std::cout << "Test successful.\n";
-	}
 
 	class Application
 	{

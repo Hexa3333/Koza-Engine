@@ -1,9 +1,9 @@
 #pragma once
 #include <glew.h>
 
-#include <ostream>
 #include <functional>
 #include "Globals.h"
+#include <ostream>
 
 namespace Koza_Core
 {

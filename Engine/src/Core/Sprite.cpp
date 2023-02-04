@@ -1,6 +1,6 @@
 #include "Sprite.h"
+#define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-
 #include <iostream>
 
 using namespace Koza_Core;
@@ -10,7 +10,7 @@ Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multipl
 	imgData = stbi_load(sourceImagePath.c_str(), &imgWidth, &imgHeight, &imgNumOfNormalChannels, 0);
 	if (imgData == NULL)
 	{
-		imgData = stbi_load("missing.jpg", &imgWidth, &imgHeight, &imgNumOfNormalChannels, 0);
+		imgData = stbi_load("../../res/missing.jpg", &imgWidth, &imgHeight, &imgNumOfNormalChannels, 0);
 		std::cerr << "Sprite instance " << this << " has failed to read a sprite(s)." << std::endl;
 		hasAlphaChannel = false; // "missing.jpg" does not have an alpha channel.
 	}

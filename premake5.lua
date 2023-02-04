@@ -23,11 +23,11 @@ workspace "Koza-Engine"
 
 project "Koza-Engine"
 	location "Engine"
-	kind "ConsoleApp" -- SharedLib
+	kind "StaticLib" -- SharedLib
 	language "C++"
 	cppdialect "C++20"
 	ignoredefaultlibraries "MSVCRT"
-	targetdir "bin/Koza-Engine(%{cfg.buildcfg})"
+	targetdir "Game/bin/"
 	files
 	{
 		"Engine/src/**.h",
@@ -35,7 +35,7 @@ project "Koza-Engine"
 	}
 	
 	libdirs { "Engine/lib/GLEW", "Engine/lib/GLFW" }
-	links { "opengl32", "glew32", "glfw3.lib" }
+	links { "opengl32", "glew32", "glfw3" }
 	
 	includedirs
 	{
@@ -44,4 +44,31 @@ project "Koza-Engine"
 		"Engine/include/glm",
 		"Engine/include/stb",
 		"Engine/include/spdlog/include"
+	}
+	
+project "Game"
+	location "Game"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++20"
+	ignoredefaultlibraries "MSVCRT"
+	targetdir "Game/bin/"
+	files
+	{
+		"Game/src/**.cpp",
+		"Game/src/**.h"
+	}
+	
+	libdirs { "Engine/lib/GLEW", "Engine/lib/GLFW", "Game/bin" }
+	links { "opengl32", "glew32", "glfw3", "Koza-Engine" }
+
+	includedirs
+	{
+		"Engine/include/GL",
+		"Engine/include/GLFW",
+		"Engine/include/glm",
+		"Engine/include/stb",
+		"Engine/include/spdlog/include",
+		
+		"Engine/src/UserIncludes"
 	}

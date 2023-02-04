@@ -71,6 +71,5 @@
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
 </Project>
