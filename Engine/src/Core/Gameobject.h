@@ -32,8 +32,9 @@ namespace Koza_Core
 		Gameobject(Sprite* sprite, Shader* shader = new Shader(DEFAULT_VERTEX_SHADER, DEFAULT_FRAGMENT_SHADER), GLenum drawType = GL_STATIC_DRAW);
 		~Gameobject();
 	
+		
+		void ToggleRender() override;
 		void Render(Shader* shader) override;
-	
 	private:
 		void TickUniforms(Shader* pShader);
 

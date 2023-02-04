@@ -10,9 +10,7 @@ Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multipl
 	imgData = stbi_load(sourceImagePath.c_str(), &imgWidth, &imgHeight, &imgNumOfNormalChannels, 0);
 	if (imgData == NULL)
 	{
-		imgData = stbi_load("../../res/missing.jpg", &imgWidth, &imgHeight, &imgNumOfNormalChannels, 0);
 		std::cerr << "Sprite instance " << this << " has failed to read a sprite(s)." << std::endl;
-		hasAlphaChannel = false; // "missing.jpg" does not have an alpha channel.
 	}
 	else
 	{
