@@ -53,19 +53,19 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64|x64'">
-    <OutDir>..\Game\bin\</OutDir>
+    <OutDir>bin\Win64\Debug\</OutDir>
     <IntDir>obj\Win64\Debug\</IntDir>
     <TargetName>Koza-Engine</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64|x64'">
-    <OutDir>..\Game\bin\</OutDir>
+    <OutDir>bin\Win64\Release\</OutDir>
     <IntDir>obj\Win64\Release\</IntDir>
     <TargetName>Koza-Engine</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist Win64|x64'">
-    <OutDir>..\Game\bin\</OutDir>
+    <OutDir>bin\Win64\Dist\</OutDir>
     <IntDir>obj\Win64\Dist\</IntDir>
     <TargetName>Koza-Engine</TargetName>
     <TargetExt>.lib</TargetExt>
@@ -87,7 +87,7 @@
     </Link>
     <Lib>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\Game\lib\GLEW;..\Game\lib\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>lib\GLEW;lib\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64|x64'">
@@ -111,7 +111,7 @@
     </Link>
     <Lib>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\Game\lib\GLEW;..\Game\lib\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>lib\GLEW;lib\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist Win64|x64'">
@@ -135,13 +135,12 @@
     </Link>
     <Lib>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\Game\lib\GLEW;..\Game\lib\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>lib\GLEW;lib\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Application.h" />
     <ClInclude Include="src\Core\Config.h" />
-    <ClInclude Include="src\Core\Debugging\Log.h" />
     <ClInclude Include="src\Core\Gameobject.h" />
     <ClInclude Include="src\Core\Globals.h" />
     <ClInclude Include="src\Core\Interfaces\IRenderAble.h" />
@@ -152,7 +151,6 @@
     <ClInclude Include="src\UserIncludes\KozaEngine.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Core\Debugging\Log.cpp" />
     <ClCompile Include="src\Core\Gameobject.cpp" />
     <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Core\Shader.cpp" />

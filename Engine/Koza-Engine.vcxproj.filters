@@ -4,9 +4,6 @@
     <Filter Include="Core">
       <UniqueIdentifier>{2EB4837C-1AEB-840D-C3D7-6A10AFED000F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Debugging">
-      <UniqueIdentifier>{69E38DD7-55B1-81DD-3E45-F2032AB25D42}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Interfaces">
       <UniqueIdentifier>{C15F6EDC-2DEB-DBA0-36FC-5E95A20638A1}</UniqueIdentifier>
     </Filter>
@@ -23,9 +20,6 @@
     </ClInclude>
     <ClInclude Include="src\Core\Config.h">
       <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\Debugging\Log.h">
-      <Filter>Core\Debugging</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Gameobject.h">
       <Filter>Core</Filter>
@@ -53,9 +47,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Core\Debugging\Log.cpp">
-      <Filter>Core\Debugging</Filter>
-    </ClCompile>
     <ClCompile Include="src\Core\Gameobject.cpp">
       <Filter>Core</Filter>
     </ClCompile>

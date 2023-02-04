@@ -5,9 +5,7 @@
 #include <glew.h>
 #include <glfw3.h>
 #include "Window.h"
-#include "Debugging/Log.h"
 #include "Renderer/Renderer.h"
-#include "Debugging/Log.h"
 #include "stb_image.h"
 
 namespace Koza_Core
@@ -38,7 +36,6 @@ namespace Koza_Core
 
 		static void Init(const std::string& appName)
 		{
-			Log::Get().Init();
 			INST().window = new Window(appName.c_str(), 720, 720);
 			stbi_set_flip_vertically_on_load(true);
 		}

@@ -45,16 +45,3 @@ void Window::parseHintsGLFW(std::vector<int> Hints)
         glfwWindowHint(Hints.at(i), Hints.at(i + 1));
     }
 }
-
-void Window::useProperty(PROP prop)
-{
-    switch (prop)
-    {
-        case PROP::V_SYNC:
-            glfwSwapInterval(1);
-        
-        case PROP::RESIZABLE:
-            glfwSetWindowAttrib(window, GLFW_RESIZABLE, true);
-            
-    }
-}

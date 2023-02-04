@@ -30,6 +30,5 @@ namespace Koza_Core
 
 	private:
 		void parseHintsGLFW(std::vector<int> Hints);
-		void useProperty(PROP prop);
 	};
 }
