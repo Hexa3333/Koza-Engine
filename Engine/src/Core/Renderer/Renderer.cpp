@@ -13,14 +13,13 @@ void Renderer::Run()
 {
 	for (auto obj : Entities) 
 	{
-		if (obj->IsBeingRendered)
-			obj->Render(obj->m_Shader);
+		if (obj->IsBeingRendered) obj->Render(obj->m_Shader);
+		obj->TickUniforms(obj->m_Shader);
 	}
 }
 
 void Renderer::Kill()
 {
-	for (auto obj : Entities)
-		delete obj;
+	for (auto obj : Entities) delete obj;
 	Entities.clear();
 }

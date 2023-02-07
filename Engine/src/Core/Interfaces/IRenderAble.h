@@ -12,5 +12,10 @@ namespace Koza_Core
 		Shader* m_Shader;
 		IRenderAble(Shader* shader) : m_Shader(shader) {}
 		virtual void Render(Shader* shader) = 0;
+		virtual void TickUniforms(Shader* shader) = 0;
+	
+		IRenderAble() = delete;
+		IRenderAble(const IRenderAble&) = delete;
+		IRenderAble(IRenderAble&&) = delete;
 	};
 }

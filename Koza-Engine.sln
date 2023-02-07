@@ -1,81 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.4.33213.308
-MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "Game\Game.vcxproj", "{7FA9857C-6BE0-860D-14CD-6C1000E3020F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Koza-Engine", "Engine\Koza-Engine.vcxproj", "{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug Win64|Win64 = Debug Win64|Win64
-		Debug Win64|x64 = Debug Win64|x64
 		Debug|Win64 = Debug|Win64
-		Debug|x64 = Debug|x64
-		Dist Win64|Win64 = Dist Win64|Win64
-		Dist Win64|x64 = Dist Win64|x64
 		Dist|Win64 = Dist|Win64
-		Dist|x64 = Dist|x64
-		Release Win64|Win64 = Release Win64|Win64
-		Release Win64|x64 = Release Win64|x64
 		Release|Win64 = Release|Win64
-		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug Win64|Win64.ActiveCfg = Debug Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug Win64|Win64.Build.0 = Debug Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug Win64|x64.ActiveCfg = Debug Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug Win64|x64.Build.0 = Debug Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug|Win64.ActiveCfg = Debug Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug|Win64.Build.0 = Debug Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug|x64.ActiveCfg = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug|x64.Build.0 = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist Win64|Win64.ActiveCfg = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist Win64|Win64.Build.0 = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist Win64|x64.ActiveCfg = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist Win64|x64.Build.0 = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist|Win64.ActiveCfg = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist|Win64.Build.0 = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist|x64.ActiveCfg = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist|x64.Build.0 = Dist Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release Win64|Win64.ActiveCfg = Release Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release Win64|Win64.Build.0 = Release Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release Win64|x64.ActiveCfg = Release Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release Win64|x64.Build.0 = Release Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release|Win64.ActiveCfg = Release Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release|Win64.Build.0 = Release Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release|x64.ActiveCfg = Release Win64|x64
-		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release|x64.Build.0 = Release Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Debug Win64|Win64.ActiveCfg = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Debug Win64|Win64.Build.0 = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Debug Win64|x64.ActiveCfg = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Debug Win64|x64.Build.0 = Debug Win64|x64
 		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Debug|Win64.ActiveCfg = Debug Win64|x64
 		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Debug|Win64.Build.0 = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Debug|x64.ActiveCfg = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Debug|x64.Build.0 = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist Win64|Win64.ActiveCfg = Dist Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist Win64|Win64.Build.0 = Dist Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist Win64|x64.ActiveCfg = Dist Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist Win64|x64.Build.0 = Dist Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist|Win64.ActiveCfg = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist|Win64.Build.0 = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist|x64.ActiveCfg = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist|x64.Build.0 = Debug Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Release Win64|Win64.ActiveCfg = Release Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Release Win64|Win64.Build.0 = Release Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Release Win64|x64.ActiveCfg = Release Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Release Win64|x64.Build.0 = Release Win64|x64
+		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist|Win64.ActiveCfg = Dist Win64|x64
+		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Dist|Win64.Build.0 = Dist Win64|x64
 		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Release|Win64.ActiveCfg = Release Win64|x64
 		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Release|Win64.Build.0 = Release Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Release|x64.ActiveCfg = Release Win64|x64
-		{7FA9857C-6BE0-860D-14CD-6C1000E3020F}.Release|x64.Build.0 = Release Win64|x64
+		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug|Win64.ActiveCfg = Debug Win64|x64
+		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Debug|Win64.Build.0 = Debug Win64|x64
+		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist|Win64.ActiveCfg = Dist Win64|x64
+		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Dist|Win64.Build.0 = Dist Win64|x64
+		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release|Win64.ActiveCfg = Release Win64|x64
+		{FDC358F7-6979-D1EC-F26D-CBC35E22C8F0}.Release|Win64.Build.0 = Release Win64|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DF0E006C-618D-4243-BFF1-B00E8D760268}
 	EndGlobalSection
 EndGlobal

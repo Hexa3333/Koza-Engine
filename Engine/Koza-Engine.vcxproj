@@ -150,6 +150,7 @@
     <ClInclude Include="src\Core\Sprite.h" />
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\UserIncludes\KozaEngine.h" />
+    <ClInclude Include="src\Core\Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Input.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="src\Core\Shader.cpp" />
     <ClCompile Include="src\Core\Sprite.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
+    <ClCompile Include="src\Core\Transform.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

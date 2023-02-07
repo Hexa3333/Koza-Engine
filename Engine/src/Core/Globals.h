@@ -8,10 +8,10 @@ namespace Koza_Globals {
 		layout(location = 0) in vec3 mPos;\n\
 		layout(location = 1) in vec2 mTex;\n\
 		out vec2 TextureCoordinates;\n\
-		uniform mat4 model;\n\
+		uniform mat4 trans;\n\
 		void main()\n\
 		{\n\
-			gl_Position = model * vec4(mPos, 1.0);\n\
+			gl_Position = trans * vec4(mPos, 1.0);\n\
 			TextureCoordinates = mTex;\n\
 		}";
 

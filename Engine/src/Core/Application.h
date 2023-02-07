@@ -42,8 +42,7 @@ namespace Koza_Core
 
 		static void Run()
 		{
-			Renderer::MAIN().Run();
-
+			Renderer::MAIN().Run(); 
 			INST().window->SwapBuffers();
 			glfwPollEvents();
 		}
@@ -53,8 +52,5 @@ namespace Koza_Core
 			Renderer::MAIN().Kill();
 			glfwTerminate();
 		}
-
-	public:
-		Application(const Application&) = delete;
 	};
 }
