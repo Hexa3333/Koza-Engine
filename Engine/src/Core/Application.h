@@ -50,6 +50,7 @@ namespace Koza_Core
 		static void Kill()
 		{
 			Renderer::MAIN().Kill();
+			Shader::Kill();
 			glfwTerminate();
 		}
 	};

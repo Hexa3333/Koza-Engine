@@ -12,15 +12,11 @@ using namespace Koza_Core;
 *	Use of "#shader" pragmas for seperating
 * fragment and vertex shaders.
 * 
-* 
 * Shader IDs ?
-* 
-*	CONSTRUCTORS SHOULD NOT CREATE. THIS WILL BE USEFUL
-* FOR GAMEOBJECT INSTANTIATION
 * 
 */
 
-Shader::Shader() {}
+std::vector<Shader*> Shader::allShaders;
 
 Shader::Shader(const std::string& vertexFilePath, const std::string& fragmentFilePath)
 {
@@ -114,18 +110,19 @@ Shader::~Shader()
 
 void Shader::Use(){ glUseProgram(shaderProgram); }
 
-// TODO:
+unsigned int Shader::getShaderProgram()
+{
+	return shaderProgram;
+}
+
 template<typename T>
 inline void Shader::sendUniform(const std::string& variableName, T value)
 {
 	std::cout << "It\'s type = " << typeid(value) << std::endl;
 }
 
-
-
-// -- -- -- -- -- -- -- -- -- -- -- -- --
-
-unsigned int Shader::getShaderProgram()
+void Shader::Kill()
 {
-	return shaderProgram;
+	for (auto obj : allShaders) delete obj;
+	allShaders.clear();
 }
