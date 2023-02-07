@@ -2,6 +2,12 @@
 
 namespace Koza_Core
 {
+	Transform Transform::operator=(const glm::vec3& position)
+	{
+		Translate(position);
+		return *this;
+	}
+
 	void Transform::Translate(const glm::vec3& moveBy)
 	{
 		transform = glm::translate(transform, moveBy);

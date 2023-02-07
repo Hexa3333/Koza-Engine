@@ -10,6 +10,8 @@ namespace Koza_Core
 	public:
 		glm::mat4 transform = glm::mat4(1.0f);
 
+		Transform operator=(const glm::vec3& position);
+
 		void Translate(const glm::vec3& moveBy);
 		void Translate(float moveByx, float moveByy);
 
