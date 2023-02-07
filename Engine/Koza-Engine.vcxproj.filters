@@ -47,6 +47,8 @@
     </ClInclude>
     <ClInclude Include="src\Core\Input.h" />
     <ClInclude Include="src\Core\Transform.h" />
+    <ClInclude Include="src\UserIncludes\KozaDebug.h" />
+    <ClInclude Include="src\Core\Game.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Gameobject.cpp">
@@ -66,5 +68,6 @@
     </ClCompile>
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\Transform.cpp" />
+    <ClCompile Include="src\Core\Game.cpp" />
   </ItemGroup>
 </Project>

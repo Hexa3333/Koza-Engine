@@ -106,6 +106,7 @@ Shader::~Shader()
 {
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
+	glDeleteProgram(shaderProgram);
 }
 
 void Shader::Use(){ glUseProgram(shaderProgram); }

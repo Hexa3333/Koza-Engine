@@ -7,6 +7,7 @@
 #include "Window.h"
 #include "Renderer/Renderer.h"
 #include "stb_image.h"
+#include "Game.h"
 
 namespace Koza_Core
 {
@@ -21,13 +22,13 @@ namespace Koza_Core
 			static Application _instance;
 			return _instance;
 		}
+
+	public:
+
 		static GLFWwindow* GetMainWindow()
 		{
 			return INST().window->getWindow();
 		}
-
-	public:
-
 
 		static bool GetAppShouldRun()
 		{
@@ -38,20 +39,22 @@ namespace Koza_Core
 		{
 			INST().window = new Window(appName.c_str(), 720, 720);
 			stbi_set_flip_vertically_on_load(true);
+			Game::MStart();
 		}
 
 		static void Run()
 		{
-			Renderer::MAIN().Run(); 
+			Game::MUpdate();
+			Renderer::MAIN().Run();
 			INST().window->SwapBuffers();
 			glfwPollEvents();
 		}
 
 		static void Kill()
 		{
+			glfwTerminate();
 			Renderer::MAIN().Kill();
 			Shader::Kill();
-			glfwTerminate();
 		}
 	};
 }
