@@ -116,12 +116,6 @@ unsigned int Shader::getShaderProgram()
 	return shaderProgram;
 }
 
-template<typename T>
-inline void Shader::sendUniform(const std::string& variableName, T value)
-{
-	std::cout << "It\'s type = " << typeid(value) << std::endl;
-}
-
 void Shader::Kill()
 {
 	for (auto obj : allShaders) delete obj;

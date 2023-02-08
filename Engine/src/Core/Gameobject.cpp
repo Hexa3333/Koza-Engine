@@ -77,8 +77,11 @@ namespace Koza_Core
 
     Gameobject::~Gameobject()
     {
+        this->IsBeingRendered = false;
+
         glDeleteVertexArrays(1, &VAO);
         glDeleteBuffers(1, &VBO);
+        glDeleteBuffers(1, &EBO);
     }
 
     void Gameobject::TickUniforms(Shader* pShader)
