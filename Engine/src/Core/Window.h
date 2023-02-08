@@ -24,7 +24,7 @@ namespace Koza_Core
 
 		Window(const char* Name, int w, int h, int numOfProperties=0, ...);
 		void SwapBuffers();
-
+		void Clear();
 	
 		GLFWwindow* getWindow() { return window; }
 

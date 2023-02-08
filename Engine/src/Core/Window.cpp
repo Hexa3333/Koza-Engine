@@ -38,6 +38,11 @@ void Window::SwapBuffers()
     glfwSwapBuffers(this->window);
 }
 
+void Window::Clear()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+}
+
 void Window::parseHintsGLFW(std::vector<int> Hints)
 {
     for (int i = 0; i < Hints.size(); i += 2)

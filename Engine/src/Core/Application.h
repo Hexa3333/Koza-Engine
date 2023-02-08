@@ -45,6 +45,8 @@ namespace Koza_Core
 		static void Run()
 		{
 			Game::MUpdate();
+
+			INST().window->Clear();
 			Renderer::MAIN().Run();
 			INST().window->SwapBuffers();
 			glfwPollEvents();
