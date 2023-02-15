@@ -38,7 +38,11 @@ namespace Koza_Core
 		static void Init(const std::string& appName)
 		{
 			INST().window = new Window(appName.c_str(), 720, 720);
+
 			stbi_set_flip_vertically_on_load(true);
+
+
+			Renderer::Entities.reserve(200 * sizeof(IRenderAble*));
 			Game::MStart();
 		}
 

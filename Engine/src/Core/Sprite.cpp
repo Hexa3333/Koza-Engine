@@ -30,8 +30,6 @@ Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multipl
 	glGenerateMipmap(GL_TEXTURE_2D);
 
 	stbi_image_free(imgData);
-
-	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void Sprite::Bind() { glBindTexture(GL_TEXTURE_2D, textureOBJ[0]); }
