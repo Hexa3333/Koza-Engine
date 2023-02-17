@@ -1,4 +1,5 @@
 #include "Transform.h"
+#include <iostream>
 
 namespace Koza_Core
 {
@@ -11,11 +12,17 @@ namespace Koza_Core
 	void Transform::Translate(const glm::vec3& moveBy)
 	{
 		m_transform = glm::translate(m_transform, moveBy);
+
+		glm::vec4 _pc = glm::vec4(position.x + moveBy.x, position.y + moveBy.y, 1, 1);
+		position = glm::vec2(_pc.x, _pc.y);
 	}
 
 	void Transform::Translate(float moveByx, float moveByy)
 	{
 		m_transform = glm::translate(m_transform, glm::vec3(moveByx, moveByy, 0.0f));
+
+		glm::vec4 _pc = glm::vec4(position.x + moveByx, position.y + moveByy, 1, 1);
+		position = glm::vec2(_pc.x, _pc.y);
 	}
 
 
