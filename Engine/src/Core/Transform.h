@@ -5,10 +5,11 @@
 
 namespace Koza_Core
 {
-	class Transform
+	struct Transform
 	{
 	public:
-		glm::mat4 transform = glm::mat4(1.0f);
+		glm::vec2 position = glm::vec2(0.0f);
+		glm::mat4 m_transform = glm::translate(glm::mat4(1.0f), glm::vec3(position.x, position.y, 0.f));
 
 		Transform operator=(const glm::vec3& position);
 

@@ -54,11 +54,6 @@ namespace Koza_Core
 
         glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, Stride, (void*)(3 * sizeof(float))); // Last argument is the offset (color is the fourth)
         glEnableVertexAttribArray(1);
-
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-        glBindVertexArray(0);
-
     }
 
     void Gameobject::Render(Shader* shader)
@@ -82,9 +77,9 @@ namespace Koza_Core
         glDeleteBuffers(1, &EBO);
     }
 
-    void Gameobject::TickUniforms(Shader* pShader)
+    void Gameobject::TickUniforms(Shader* pshader)
     {
-        glUniformMatrix4fv(glGetUniformLocation(pShader->getShaderProgram(), "trans"), 1, GL_FALSE, glm::value_ptr(transform.transform));
+        IRenderAble::TickUniforms(pshader);
     }
 }
 
