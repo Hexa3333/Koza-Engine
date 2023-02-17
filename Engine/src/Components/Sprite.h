@@ -2,7 +2,7 @@
 #include <glew.h>
 
 #include <functional>
-#include "Globals.h"
+#include "../Core/Globals.h"
 #include <ostream>
 
 namespace Koza_Core

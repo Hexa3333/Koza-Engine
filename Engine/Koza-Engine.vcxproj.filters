@@ -33,10 +33,10 @@
     <ClInclude Include="src\Core\Renderer\Renderer.h">
       <Filter>Core\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Shader.h">
+    <ClInclude Include="src\Components\Shader.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Sprite.h">
+    <ClInclude Include="src\Components\Sprite.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Window.h">
@@ -46,7 +46,7 @@
       <Filter>UserIncludes</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Input.h" />
-    <ClInclude Include="src\Core\Transform.h" />
+    <ClInclude Include="src\Components\Transform.h" />
     <ClInclude Include="src\UserIncludes\KozaDebug.h" />
     <ClInclude Include="src\Core\Game.h" />
   </ItemGroup>
@@ -57,17 +57,17 @@
     <ClCompile Include="src\Core\Renderer\Renderer.cpp">
       <Filter>Core\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Shader.cpp">
+    <ClCompile Include="src\Components\Shader.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Sprite.cpp">
+    <ClCompile Include="src\Components\Sprite.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Input.cpp" />
-    <ClCompile Include="src\Core\Transform.cpp" />
+    <ClCompile Include="src\Components\Transform.cpp" />
     <ClCompile Include="src\Core\Game.cpp" />
   </ItemGroup>
 </Project>

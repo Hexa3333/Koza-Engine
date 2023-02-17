@@ -147,22 +147,22 @@
     <ClInclude Include="src\Core\Globals.h" />
     <ClInclude Include="src\Core\Interfaces\IRenderAble.h" />
     <ClInclude Include="src\Core\Renderer\Renderer.h" />
-    <ClInclude Include="src\Core\Shader.h" />
-    <ClInclude Include="src\Core\Sprite.h" />
+    <ClInclude Include="src\Components\Shader.h" />
+    <ClInclude Include="src\Components\Sprite.h" />
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\UserIncludes\KozaDebug.h" />
     <ClInclude Include="src\UserIncludes\KozaEngine.h" />
-    <ClInclude Include="src\Core\Transform.h" />
+    <ClInclude Include="src\Components\Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Game.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\Gameobject.cpp" />
     <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\Core\Shader.cpp" />
-    <ClCompile Include="src\Core\Sprite.cpp" />
+    <ClCompile Include="src\Components\Shader.cpp" />
+    <ClCompile Include="src\Components\Sprite.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
-    <ClCompile Include="src\Core\Transform.cpp" />
+    <ClCompile Include="src\Components\Transform.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

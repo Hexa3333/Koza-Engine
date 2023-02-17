@@ -1,10 +1,10 @@
 #pragma once
 
 #include "glew.h"
-#include "Shader.h"
-#include "Sprite.h"
+#include "../Components/Shader.h"
+#include "../Components/Sprite.h"
 #include "Interfaces/IRenderAble.h"
-#include "Transform.h"
+#include "../Components/Transform.h"
 #include "Globals.h"
 
 using namespace Koza_Globals;
@@ -25,9 +25,6 @@ namespace Koza_Core
 		~Gameobject();
 		
 		virtual void Render(Shader* shader) override;
-
-	private:
-		virtual void TickUniforms(Shader* pShader) override;
 	};
 
 }

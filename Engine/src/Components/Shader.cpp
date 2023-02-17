@@ -1,5 +1,5 @@
 #include "Shader.h"
-#include "Globals.h"
+#include "../Core/Globals.h"
 
 #include <iostream>
 #include <fstream>
