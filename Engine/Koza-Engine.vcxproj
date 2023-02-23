@@ -149,6 +149,7 @@
     <ClInclude Include="src\Core\Renderer\Renderer.h" />
     <ClInclude Include="src\Components\Shader.h" />
     <ClInclude Include="src\Components\Sprite.h" />
+    <ClInclude Include="src\Core\Time.h" />
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\UserIncludes\KozaDebug.h" />
     <ClInclude Include="src\UserIncludes\KozaEngine.h" />
@@ -161,6 +162,7 @@
     <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Components\Shader.cpp" />
     <ClCompile Include="src\Components\Sprite.cpp" />
+    <ClCompile Include="src\Core\Time.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
     <ClCompile Include="src\Components\Transform.cpp" />
   </ItemGroup>

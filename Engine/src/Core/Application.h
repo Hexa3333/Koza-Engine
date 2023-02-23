@@ -8,6 +8,7 @@
 #include "Renderer/Renderer.h"
 #include "stb_image.h"
 #include "Game.h"
+#include "Time.h"
 
 namespace Koza_Core
 {
@@ -48,6 +49,7 @@ namespace Koza_Core
 
 		static void Run()
 		{
+			Time::Calculate();
 			Game::MUpdate();
 
 			INST().window->Clear();
