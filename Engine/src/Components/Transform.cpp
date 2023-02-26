@@ -70,19 +70,19 @@ namespace Koza_Core
 		m_transform = glm::rotate(m_transform, glm::radians(radians), glm::vec3(rotateByx, rotateByy, 0.0f));
 	}
 
-	void Transform::PosCopy(const Transform& other)
+	void Transform::setPosition(const Transform& other)
 	{
 		glm::value_ptr(m_transform)[12] = glm::value_ptr(other.m_transform)[12];
 		glm::value_ptr(m_transform)[13] = glm::value_ptr(other.m_transform)[13];
 	}
 
-	void Transform::ScaleCopy(const Transform& other)
+	void Transform::setScale(const Transform& other)
 	{
 		glm::value_ptr(m_transform)[0] = glm::value_ptr(other.m_transform)[0];
 		glm::value_ptr(m_transform)[5] = glm::value_ptr(other.m_transform)[5];
 	}
 
-	void Transform::RotCopy(const Transform& other)
+	void Transform::setRotation(const Transform& other)
 	{
 		std::cout << "ROTCOPY NOT IMPLEMENTED YET\n";
 	}

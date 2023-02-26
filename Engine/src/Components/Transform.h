@@ -31,9 +31,13 @@ namespace Koza_Core
 		void Rotate(float rotateByx, float rotateByy, float radians);
 
 
-		void PosCopy(const Transform& other);
-		void ScaleCopy(const Transform& other);
-		void RotCopy(const Transform& other);
+		void setPosition(const Transform& other);
+		void setScale(const Transform& other);
+		void setRotation(const Transform& other);
+
+		void setPosition(const glm::vec2& other);
+		void setScale(const glm::vec2& other);
+		void setRotation(const glm::vec2& other);
 
 	private:
 		// Only used for debugging
