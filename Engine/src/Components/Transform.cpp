@@ -74,6 +74,10 @@ namespace Koza_Core
 	{
 		glm::value_ptr(m_transform)[12] = glm::value_ptr(other.m_transform)[12];
 		glm::value_ptr(m_transform)[13] = glm::value_ptr(other.m_transform)[13];
+
+		// Set the position value accordingly
+		m_position.x = glm::value_ptr(other.m_transform)[12];
+		m_position.y = glm::value_ptr(other.m_transform)[13];
 	}
 
 	void Transform::setScale(const Transform& other)
