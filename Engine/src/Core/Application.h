@@ -42,8 +42,7 @@ namespace Koza_Core
 
 			stbi_set_flip_vertically_on_load(true);
 
-
-			Renderer::Entities.reserve(200 * sizeof(IRenderAble*));
+			Renderer::MAIN().Init();
 			Game::MStart();
 		}
 

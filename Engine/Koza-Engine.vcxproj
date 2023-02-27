@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Game.h" />
-    <ClInclude Include="src\Core\Input.h" />
     <ClInclude Include="src\Core\Application.h" />
     <ClInclude Include="src\Core\Config.h" />
     <ClInclude Include="src\Core\Gameobject.h" />
@@ -157,7 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Game.cpp" />
-    <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\Gameobject.cpp" />
     <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Components\Shader.cpp" />

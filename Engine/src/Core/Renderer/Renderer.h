@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <vector>
 #include "../Interfaces/IRenderAble.h"
 #include "../Gameobject.h"
