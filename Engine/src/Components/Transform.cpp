@@ -3,6 +3,8 @@
 
 namespace Koza_Core
 {
+	Transform Transform::Origin(0.0f, 0.0f);
+
 	// Private Constructor
 	Transform::Transform(float startPosX, float startPosY)
 	{
@@ -26,7 +28,7 @@ namespace Koza_Core
 	// IN PROGRESS
 	Transform Transform::operator=(const glm::vec2& Position)
 	{
-		m_position = glm::vec2(Position.x, Position.y);
+		m_position = Position;
 		m_transform = glm::translate(glm::mat4(1.0f), glm::vec3(m_position, 1.f));
 
 		return *this;

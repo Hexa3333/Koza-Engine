@@ -1,4 +1,5 @@
 #include "Renderer.h"
+#include "../Game.h"
 #include <algorithm>
 #include <iostream>
 using namespace Koza_Core;
@@ -21,6 +22,5 @@ void Renderer::Run()
 
 void Renderer::Kill()
 {
-	for (auto obj : Entities) delete obj;
 	Entities.clear();
 }

@@ -36,9 +36,9 @@ namespace Koza_Core
 			return !glfwWindowShouldClose(GetMainWindow());
 		}
 
-		static void Init(const std::string& appName)
+		static void Init(const std::string& appName, uint16_t WX, uint16_t WY)
 		{
-			INST().window = new Window(appName.c_str(), 720, 720);
+			INST().window = new Window(appName.c_str(), WX, WY);
 
 			stbi_set_flip_vertically_on_load(true);
 

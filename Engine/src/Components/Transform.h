@@ -39,8 +39,9 @@ namespace Koza_Core
 		void setScale(const glm::vec2& other);
 		void setRotation(const glm::vec2& other);
 
-	private:
+	public:
 		// Only used for debugging
 		static float* ReadMatrix(const glm::mat4& Mat);
+		static Transform Origin;
 	};
 }
