@@ -11,11 +11,11 @@ namespace Koza_Core
 
 	void Game::MStart()
 	{
-		for (auto obj : AllBehaviorObjects) obj->Start();
+		for (auto& obj : AllBehaviorObjects) obj->Start();
 	}
 
 	void Game::MUpdate()
 	{
-		for (auto obj : AllBehaviorObjects) obj->Update();
+		for (auto& obj : AllBehaviorObjects) obj->Update();
 	}
 }
