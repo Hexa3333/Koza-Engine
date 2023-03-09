@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Components">
+      <UniqueIdentifier>{6B7DD516-5735-1764-C03C-F0BFAC13B254}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Core">
       <UniqueIdentifier>{2EB4837C-1AEB-840D-C3D7-6A10AFED000F}</UniqueIdentifier>
     </Filter>
@@ -15,10 +18,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\Shader.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\Sprite.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\Transform.h">
+      <Filter>Components</Filter>
+    </ClInclude>
     <ClInclude Include="src\Core\Application.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Config.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Game.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Gameobject.h">
@@ -33,43 +48,43 @@
     <ClInclude Include="src\Core\Renderer\Renderer.h">
       <Filter>Core\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\Shader.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Components\Sprite.h">
+    <ClInclude Include="src\Core\Time.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Window.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\UserIncludes\KozaDebug.h">
+      <Filter>UserIncludes</Filter>
+    </ClInclude>
     <ClInclude Include="src\UserIncludes\KozaEngine.h">
       <Filter>UserIncludes</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Input.h" />
-    <ClInclude Include="src\Components\Transform.h" />
-    <ClInclude Include="src\UserIncludes\KozaDebug.h" />
-    <ClInclude Include="src\Core\Game.h" />
-    <ClInclude Include="src\Core\Time.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Components\Shader.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Components\Sprite.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Components\Transform.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Game.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
     <ClCompile Include="src\Core\Gameobject.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Renderer\Renderer.cpp">
       <Filter>Core\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\Shader.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Components\Sprite.cpp">
+    <ClCompile Include="src\Core\Time.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Input.cpp" />
-    <ClCompile Include="src\Components\Transform.cpp" />
-    <ClCompile Include="src\Core\Game.cpp" />
-    <ClCompile Include="src\Core\Time.cpp" />
   </ItemGroup>
 </Project>

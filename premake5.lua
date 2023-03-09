@@ -2,12 +2,18 @@ workspace "Koza-Engine"
 	architecture "x64"
 	
 	configurations { "Debug", "Release", "Dist"	}
-	platforms { "Win64" }
+	platforms { "Win64", "Debian" }
 	
 	filter "platforms:Win64"
 		defines "KOZA_PLATFORM_WINDOWS"
 		system "windows"
+
+	filter "platforms:Debian"
+		defines "KOZA_PLATFORM_DEBIAN"
+		system "linux"
+
 	
+
 	filter "configurations:Debug"
 		defines "DEBUG"
 		symbols "On"
@@ -20,6 +26,13 @@ workspace "Koza-Engine"
 		defines "DIST"
 		optimize "Full"
 
+INCLUDES = { 
+	"Engine/include/GL",
+	"Engine/include/GLFW",
+	"Engine/include/glm",
+	"Engine/include/stb",
+	"Engine/include/spdlog/include"
+	}
 
 project "Koza-Engine"
 	location "Engine"
@@ -32,19 +45,15 @@ project "Koza-Engine"
 		"Engine/src/**.h",
 		"Engine/src/**.cpp"
 	}
+
+
+	filter "platforms:Win64"
+		libdirs { "Engine/lib/GLEW", "Engine/lib/GLFW" }
+		links { "opengl32", "glew32", "glfw3" }
 	
-	libdirs { "Engine/lib/GLEW", "Engine/lib/GLFW" }
-	links { "opengl32", "glew32", "glfw3" }
+	includedirs { INCLUDES }
 	
-	includedirs
-	{
-		"Engine/include/GL",
-		"Engine/include/GLFW",
-		"Engine/include/glm",
-		"Engine/include/stb",
-		"Engine/include/spdlog/include"
-	}
-	
+
 project "Game"
 	location "Game"
 	kind "ConsoleApp"
@@ -57,17 +66,8 @@ project "Game"
 		"Game/src/**.cpp",
 		"Game/src/**.h"
 	}
-	
-	libdirs { "Engine/lib/GLEW", "Engine/lib/GLFW" }
-	links { "opengl32", "glew32", "glfw3", "Koza-Engine" }
+	filter "platforms:Win64"
+		libdirs { "Engine/lib/GLEW", "Engine/lib/GLFW" }
+		links { "opengl32", "glew32", "glfw3", "Koza-Engine" }
 
-	includedirs
-	{
-		"Engine/include/GL",
-		"Engine/include/GLFW",
-		"Engine/include/glm",
-		"Engine/include/stb",
-		"Engine/include/spdlog/include",
-		
-		"Engine/src/UserIncludes"
-	}
+	includedirs{ INCLUDES, "Engine/src/UserIncludes" }
