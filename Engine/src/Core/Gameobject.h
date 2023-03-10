@@ -16,15 +16,20 @@ namespace Koza_Core
 	private:
 		unsigned int VAO, VBO, EBO;
 		GLsizei sizeIndices;
-		Sprite& sprite;
+		Sprite& m_Sprite;
 
 	public:
 
 		Gameobject() = default;
-		Gameobject(Sprite* sprite, Shader* shader = new Shader(DEFAULT_VERTEX_SHADER, DEFAULT_FRAGMENT_SHADER), GLenum drawType = GL_STATIC_DRAW);
+
+		Gameobject(Sprite* sprite, 
+			Shader* shader = new Shader(DEFAULT_VERTEX_SHADER, DEFAULT_FRAGMENT_SHADER),
+			GLenum drawType = GL_STATIC_DRAW);
+
 		~Gameobject();
 		
 		virtual void Render(Shader* shader) override;
+		void Destroy();
 	};
 
 }

@@ -16,8 +16,6 @@ using namespace Koza_Core;
 * 
 */
 
-std::vector<Shader*> Shader::allShaders;
-
 Shader::Shader(const std::string& vertexFilePath, const std::string& fragmentFilePath)
 {
 	CreateFromFile(vertexFilePath, fragmentFilePath);
@@ -114,10 +112,4 @@ void Shader::Use(){ glUseProgram(shaderProgram); }
 unsigned int Shader::getShaderProgram()
 {
 	return shaderProgram;
-}
-
-void Shader::Kill()
-{
-	for (auto obj : allShaders) delete obj;
-	allShaders.clear();
 }

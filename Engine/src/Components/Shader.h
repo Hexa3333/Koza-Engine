@@ -12,8 +12,6 @@ namespace Koza_Core
 		unsigned int vertexShader, fragmentShader;
 		unsigned int shaderProgram;
 
-		static std::vector<Shader*> allShaders;
-
 	public:
 		Shader() = default;
 		Shader(const std::string& vertexFilePath, const std::string& fragmentFilePath);
@@ -24,8 +22,5 @@ namespace Koza_Core
 		void CreateFromFile(const std::string& vertexFilePath, const std::string& fragmentFilePath);
 
 		unsigned int getShaderProgram();
-		template<typename T> void sendUniform(const std::string& variableName, T value);
-
-		static void Kill();
 	};
 }
