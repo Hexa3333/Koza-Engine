@@ -35,7 +35,9 @@ namespace Koza_Core
     static GLsizei Stride = (4 * sizeof(float));
 
     Gameobject::Gameobject(Sprite* sprite, Shader* shader, GLenum drawType)
-        : sizeIndices(sizeof(defaultSpriteIndices)), m_Sprite(*sprite), IRenderAble(shader)
+        : sizeIndices(sizeof(defaultSpriteIndices)),
+        m_Sprite(*sprite),
+        IRenderAble(shader)
     {
         Renderer::MAIN().Entities.push_back(this);
 
@@ -56,16 +58,16 @@ namespace Koza_Core
         glEnableVertexAttribArray(1);
     }
 
-    void Gameobject::Render(Shader* shader)
+    void Gameobject::Render()
     {
-        shader->Use();
+        m_Shader->Use();
         m_Sprite.Bind();
 
         glBindVertexArray(VAO);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glDrawElements(GL_TRIANGLES, sizeIndices / 4 /*sizeof(int) == 4*/, GL_UNSIGNED_INT, 0);
 
-        TickUniforms(shader);
+        TickUniforms(m_Shader);
     }
 
     void Gameobject::Destroy()

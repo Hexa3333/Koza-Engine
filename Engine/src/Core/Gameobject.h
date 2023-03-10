@@ -28,7 +28,7 @@ namespace Koza_Core
 
 		~Gameobject();
 		
-		virtual void Render(Shader* shader) override;
+		virtual void Render() override;
 		void Destroy();
 	};
 

@@ -13,10 +13,10 @@ namespace Koza_Core
 		Transform transform;
 		Shader* m_Shader;
 		IRenderAble(Shader* shader) : m_Shader(shader) {}
-		virtual void Render(Shader* shader) = 0;
+		virtual void Render() = 0;
 		void TickUniforms(Shader* shader)
 		{
-			glUniformMatrix4fv(glGetUniformLocation(shader->getShaderProgram(), "u_trans"), 1, GL_FALSE, glm::value_ptr(transform.m_transform));
+			glUniformMatrix4fv(glGetUniformLocation(m_Shader->getShaderProgram(), "u_trans"), 1, GL_FALSE, glm::value_ptr(transform.m_transform));
 		}
 	
 

@@ -15,7 +15,7 @@ void Renderer::Run()
 {
 	for (auto& obj : Entities) 
 	{
-		if (obj->IsBeingRendered) obj->Render(obj->m_Shader);
+		if (obj->IsBeingRendered) obj->Render();
 
 		obj->TickUniforms(obj->m_Shader);
 	}
