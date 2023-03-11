@@ -10,7 +10,7 @@ using namespace Koza_Core;
 
 int main()
 {
-  Application::Init("Your Game's Name Here", screenWidth, screenHeight);
+  Application::Init("Name Here", screenWidth, screenHeight);
   
   while (Application::GetAppShouldRun())
     Application::Run();
