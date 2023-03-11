@@ -2,7 +2,7 @@
 #include "../Game.h"
 #include <algorithm>
 #include <iostream>
-using namespace Koza_Core;
+using namespace KozaCore;
 
 std::vector<IRenderAble*> Renderer::Entities;
 

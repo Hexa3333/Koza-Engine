@@ -3,7 +3,7 @@
 #include "stb_image.h"
 #include <iostream>
 
-using namespace Koza_Core;
+using namespace KozaCore;
 
 Sprite::Sprite(const std::string& sourceImagePath, int numOfUnits /*(For multiple textures)*/)
 {

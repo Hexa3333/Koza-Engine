@@ -9,7 +9,7 @@
 
 using namespace Koza_Globals;
 
-namespace Koza_Core
+namespace KozaCore
 {
 	class Gameobject : public IRenderAble
 	{

@@ -10,7 +10,7 @@
 #include "Game.h"
 #include "Time.h"
 
-namespace Koza_Core
+namespace KozaCore
 {
 
 	class Application
@@ -36,9 +36,9 @@ namespace Koza_Core
 			return !glfwWindowShouldClose(GetMainWindow());
 		}
 
-		static void Init(const std::string& appName, uint16_t WX, uint16_t WY)
+		static void Init(const std::string& appName, uint16_t WX, uint16_t WY, int WindowProperties)
 		{
-			INST().window = new Window(appName.c_str(), WX, WY);
+			INST().window = new Window(appName.c_str(), WX, WY, WindowProperties);
 
 			stbi_set_flip_vertically_on_load(true);
 

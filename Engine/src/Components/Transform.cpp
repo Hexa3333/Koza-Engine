@@ -1,7 +1,7 @@
 #include "Transform.h"
 #include <iostream>
 
-namespace Koza_Core
+namespace KozaCore
 {
 	Transform Transform::Origin(0.0f, 0.0f);
 

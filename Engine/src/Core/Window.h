@@ -4,7 +4,7 @@
 #include <glfw3.h>
 #include <vector>
 
-namespace Koza_Core
+namespace KozaCore
 {
 	struct Window
 	{
@@ -18,13 +18,19 @@ namespace Koza_Core
 
 	public:
 
-		Window(const char* Name, int w, int h, int numOfProperties=0, ...);
+		Window(const char* Name, int w, int h, int Properties);
 		void SwapBuffers();
 		void Clear();
 	
 		GLFWwindow* getWindow() { return window; }
 
 	private:
+		void parseProperties(int Properties);
 		void parseHintsGLFW(std::vector<int> Hints);
 	};
+
+	// PROPERTIES
+	#define WINDOW_FULLSCREEN		0x65
+	#define WINDOW_NORESIZE			GLFW_RESIZABLE
+
 }

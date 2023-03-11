@@ -1,6 +1,6 @@
 #include "Game.h"
 
-namespace Koza_Core
+namespace KozaCore
 {
 	std::vector<Game*> Game::AllBehaviorObjects;
 

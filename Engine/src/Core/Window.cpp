@@ -2,15 +2,17 @@
 #include <iostream>
 #include <stdarg.h>
 
-using namespace Koza_Core;
+using namespace KozaCore;
 
-Window::Window(const char* Name, int w, int h, int numOfProperties, ...)
+Window::Window(const char* Name, int w, int h, int Properties)
 {
     if (!glfwInit()) std::exit(-1);
-    va_list args;
-    va_start(args, numOfProperties);
 
-    window = glfwCreateWindow(w, h, Name, NULL, NULL);
+    if (Properties & WINDOW_FULLSCREEN)
+        window = glfwCreateWindow(w, h, Name, glfwGetPrimaryMonitor(), NULL);
+
+    else window = glfwCreateWindow(w, h, Name, NULL, NULL);
+
     if (!window)
     {
         glfwTerminate();
@@ -25,12 +27,8 @@ Window::Window(const char* Name, int w, int h, int numOfProperties, ...)
         std::cerr << "Error: " << glewGetErrorString(err) << std::endl;
     }
 
-    /* Make the window's context current */
-
-    glfwSetWindowAttrib(window, GLFW_RESIZABLE, false);
+    parseProperties(Properties);
     parseHintsGLFW(Hints);
-
-    va_end(args);
 }
 
 void Window::SwapBuffers()
@@ -41,6 +39,17 @@ void Window::SwapBuffers()
 void Window::Clear()
 {
     glClear(GL_COLOR_BUFFER_BIT);
+}
+
+void Window::parseProperties(int Props)
+{
+    switch (Props)
+    {
+        case WINDOW_NORESIZE:
+            glfwSetWindowAttrib(window, GLFW_RESIZABLE, false);
+            break;
+
+    }
 }
 
 void Window::parseHintsGLFW(std::vector<int> Hints)

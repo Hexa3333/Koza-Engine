@@ -18,7 +18,7 @@
 
 */
 
-namespace Koza_Core
+namespace KozaCore
 {
     static float defaultSpriteVertices[16] = {
         //    VERTICES          // TEXTURE

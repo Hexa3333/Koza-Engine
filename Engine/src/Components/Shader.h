@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace Koza_Core
+namespace KozaCore
 {
 	class Shader
 	{

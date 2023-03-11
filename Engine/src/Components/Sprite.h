@@ -5,7 +5,7 @@
 #include "../Core/Globals.h"
 #include <ostream>
 
-namespace Koza_Core
+namespace KozaCore
 {
 	class Sprite
 	{

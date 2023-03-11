@@ -1,6 +1,6 @@
 #include "Time.h"
 
-namespace Koza_Core
+namespace KozaCore
 {
 	float previous = (float)glfwGetTime();
 	float Time::DT;

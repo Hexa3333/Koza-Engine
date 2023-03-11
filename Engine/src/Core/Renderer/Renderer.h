@@ -3,7 +3,7 @@
 #include "../Interfaces/IRenderAble.h"
 #include "../Gameobject.h"
 
-namespace Koza_Core
+namespace KozaCore
 {
 	class Renderer
 	{

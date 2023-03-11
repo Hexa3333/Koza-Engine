@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstring>
-using namespace Koza_Core;
+using namespace KozaCore;
 
 /*
 *	TODO: 

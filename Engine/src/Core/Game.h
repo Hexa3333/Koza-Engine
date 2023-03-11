@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-namespace Koza_Core
+namespace KozaCore
 {
 	class Game
 	{

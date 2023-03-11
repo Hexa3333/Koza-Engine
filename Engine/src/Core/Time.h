@@ -1,7 +1,7 @@
 #pragma once
 #include <glfw3.h>
 
-namespace Koza_Core
+namespace KozaCore
 {
 
 	struct Time

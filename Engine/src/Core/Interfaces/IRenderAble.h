@@ -2,7 +2,7 @@
 #include "../../Components/Transform.h"
 #include "../../Components/Shader.h"
 
-namespace Koza_Core
+namespace KozaCore
 {
 	class IRenderAble
 	{
