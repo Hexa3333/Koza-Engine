@@ -8,9 +8,7 @@ Window::Window(const char* Name, int w, int h, int Properties)
 {
     if (!glfwInit()) std::exit(-1);
 
-    if (Properties & WINDOW_FULLSCREEN)
-        window = glfwCreateWindow(w, h, Name, glfwGetPrimaryMonitor(), NULL);
-
+    if (Properties & WINDOW_FULLSCREEN) window = glfwCreateWindow(w, h, Name, glfwGetPrimaryMonitor(), NULL);
     else window = glfwCreateWindow(w, h, Name, NULL, NULL);
 
     if (!window)
@@ -52,7 +50,7 @@ void Window::parseProperties(int Props)
     }
 }
 
-void Window::parseHintsGLFW(std::vector<int> Hints)
+void Window::parseHintsGLFW(std::vector<int>& Hints)
 {
     for (int i = 0; i < Hints.size(); i += 2)
     {

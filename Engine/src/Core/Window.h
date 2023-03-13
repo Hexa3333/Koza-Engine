@@ -18,7 +18,7 @@ namespace KozaCore
 
 	public:
 
-		Window(const char* Name, int w, int h, int Properties);
+		Window(const char* Name, int w, int h, int Properties=NULL);
 		void SwapBuffers();
 		void Clear();
 	
@@ -26,11 +26,11 @@ namespace KozaCore
 
 	private:
 		void parseProperties(int Properties);
-		void parseHintsGLFW(std::vector<int> Hints);
+		void parseHintsGLFW(std::vector<int>& Hints);
 	};
 
 	// PROPERTIES
-	#define WINDOW_FULLSCREEN		0x65
-	#define WINDOW_NORESIZE			GLFW_RESIZABLE
+	constexpr uint8_t WINDOW_FULLSCREEN = 0x01;
+	constexpr uint8_t WINDOW_NORESIZE = 0x02;
 
 }
