@@ -24,37 +24,21 @@ namespace KozaCore
 		void Bind();
 		void Unbind();
 
+		class Atlas
+		{
+		public:
+			Atlas(const std::string& sourceImagePath, const std::string& parseData, int parseMode=NULL);
+
+		private:
+			int mAtlasDimensions[2];
+			int mSpriteDimensions[2];
+		};
+
 	private:
 		void FindType(const std::string& fileName);
 	};
+
+	constexpr std::uint8_t PARSE_RAW = 0x01;
+	constexpr std::uint8_t PARSE_FILE = 0x02;
+
 }
-
-
-/*
-class Sprite
-{
-private:
-	Sprite* image;
-	Mesh* m_Mesh;
-
-	float svertices[32] = {
-		//    VERTICES                          // COLORS                           // TEXTURE
-		 1.0f,  1.0f, 0.0f,		1.0f, 1.0f,      // top right
-		 1.0f, -1.0f, 0.0f,		1.0f, 0.0f,      // bottom right
-		-1.0f, -1.0f, 0.0f,		0.0f, 0.0f,      // bottom left
-		-1.0f, 1.0f, 0.0f,		0.0f, 1.0f        // top left
-	};
-	unsigned int sindices[6] = {  // note that we start from 0!
-		0, 1, 3,   // first triangle
-		1, 2, 3    // second triangle
-	};
-
-public:
-	Sprite(Sprite* sourceImage, float size, GLenum drawType = GL_STATIC_DRAW);
-
-	void Render(Shader* pShader);
-
-
-	void SetTransform(glm::vec3 pVecTransform);
-};
-*/

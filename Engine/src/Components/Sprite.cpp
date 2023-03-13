@@ -1,7 +1,10 @@
 #include "Sprite.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
+
 #include <iostream>
+#include <stdio.h>
+#include <string>
 
 using namespace KozaCore;
 
@@ -40,9 +43,65 @@ Sprite::~Sprite()
 	glDeleteTextures(1, &textureOBJ[0]);
 }
 
+static int FindXInString(const char* str)
+{
+	int xSeperationIndex;
+	for (int i = 0; i < sizeof(str); i++)
+	{
+		char c = str[i];
+		if (c == 'x' || c == 'X')
+		{
+			xSeperationIndex = i;
+			break;
+		}
+	}
+	return xSeperationIndex;
+}
+
+Sprite::Atlas::Atlas(const std::string& sourceImagePath, const std::string& parseData, int parseMode)
+{
+	if (parseMode & PARSE_FILE)
+	{
+		FILE* fp = NULL;
+		fp = fopen(parseData.c_str(), "r");
+
+		if (fp == NULL)
+		{
+			std::cout << "Failed to read Sprite Atlas Data at: " << this << std::endl;
+			return;
+		}
+		
+		char dimensionsFull[9];
+		char dimensionsPerSprite[9];
+
+		fgets(dimensionsFull, sizeof(dimensionsFull), fp);
+		fgets(dimensionsPerSprite, sizeof(dimensionsPerSprite), fp);
+		fclose(fp);
+		
+		int dimFullXsep = FindXInString(dimensionsFull);
+		int dimPerSpriteXsep = FindXInString(dimensionsPerSprite);
+		
+		mAtlasDimensions[0] = std::stoi(dimensionsFull);
+		mAtlasDimensions[1] = std::stoi(&dimensionsFull[dimFullXsep + 1]);
+
+		mSpriteDimensions[0] = std::stoi(dimensionsPerSprite);
+		mSpriteDimensions[1] = std::stoi(&dimensionsPerSprite[dimPerSpriteXsep + 1]);
+
+		std::cout << "Atlas Dimensions (" << mAtlasDimensions[0] << ", " << mAtlasDimensions[1] << ")\n";
+		std::cout << "Atlas Dimensions (" << mSpriteDimensions[0] << ", " << mSpriteDimensions[1] << ")\n";
+	}
+
+	else
+	{
+
+	}
+
+}
+
+
 void Sprite::FindType(const std::string& fileName)
 {
-	std::string type;
+	char* type = (char*)malloc(5);
 
 	int dotIndex = 0;
 	char c;
