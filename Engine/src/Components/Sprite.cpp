@@ -81,14 +81,11 @@ Sprite::Atlas::Atlas(const std::string& sourceImagePath, const std::string& pars
 		int dimFullXsep = FindXInString(dimensionsFull);
 		int dimPerSpriteXsep = FindXInString(dimensionsPerSprite);
 		
-		mAtlasDimensions[0] = std::stoi(dimensionsFull);
+		mAtlasDimensions[0] = std::stoi(dimensionsFull); // stoi function automatically stops when it sees character (x in this example) instead of a "number"
 		mAtlasDimensions[1] = std::stoi(&dimensionsFull[dimFullXsep + 1]);
 
-		mSpriteDimensions[0] = std::stoi(dimensionsPerSprite);
+		mSpriteDimensions[0] = std::stoi(dimensionsPerSprite); // stoi function automatically stops when it sees character (x in this example) instead of a "number"
 		mSpriteDimensions[1] = std::stoi(&dimensionsPerSprite[dimPerSpriteXsep + 1]);
-
-		std::cout << "Atlas Dimensions (" << mAtlasDimensions[0] << ", " << mAtlasDimensions[1] << ")\n";
-		std::cout << "Atlas Dimensions (" << mSpriteDimensions[0] << ", " << mSpriteDimensions[1] << ")\n";
 	}
 
 	else
