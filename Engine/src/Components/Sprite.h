@@ -38,7 +38,7 @@ namespace KozaCore
 		void FindType(const std::string& fileName);
 	};
 
-	constexpr std::uint8_t PARSE_RAW = 0x01;
-	constexpr std::uint8_t PARSE_FILE = 0x02;
+	constexpr KOZA_FLAG PARSE_RAW = 0x01;
+	constexpr KOZA_FLAG PARSE_FILE = 0x02;
 
 }

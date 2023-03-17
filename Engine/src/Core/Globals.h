@@ -1,9 +1,13 @@
 #pragma once
 #include <iostream>
 
-namespace KozaCore {
+using KOZA_STATUS = uint8_t;
+using KOZA_FLAG = uint16_t;
 
-	using KOZA_STATUS = uint8_t;
+constexpr KOZA_STATUS SUCCESSFUL = 0x01;
+constexpr KOZA_STATUS FAILED = 0x02;
+
+namespace KozaCore {
 
 	const std::string DEFAULT_VERTEX_SHADER = "\n\
 		#version 400 core\n\

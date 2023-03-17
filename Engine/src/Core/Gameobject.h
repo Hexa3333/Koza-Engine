@@ -7,7 +7,7 @@
 #include "../Components/Transform.h"
 #include "Globals.h"
 
-using namespace Koza_Globals;
+using namespace KozaCore;
 
 namespace KozaCore
 {
