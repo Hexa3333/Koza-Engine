@@ -1,7 +1,9 @@
 #pragma once
 #include <iostream>
 
-namespace Koza_Globals {
+namespace KozaCore {
+
+	using KOZA_STATUS = uint8_t;
 
 	const std::string DEFAULT_VERTEX_SHADER = "\n\
 		#version 400 core\n\
