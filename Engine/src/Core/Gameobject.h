@@ -6,8 +6,10 @@
 #include "Interfaces/IRenderAble.h"
 #include "../Components/Transform.h"
 #include "Globals.h"
+#include <memory>
 
 using namespace KozaCore;
+using namespace std;
 
 namespace KozaCore
 {
@@ -16,7 +18,8 @@ namespace KozaCore
 	private:
 		unsigned int VAO, VBO, EBO;
 		GLsizei sizeIndices;
-		Sprite& m_Sprite;
+		shared_ptr<Sprite> m_Sprite;
+		shared_ptr<Shader> m_Shader;
 
 	public:
 
@@ -29,7 +32,6 @@ namespace KozaCore
 		~Gameobject();
 		
 		virtual void Render() override;
-		void Destroy();
 	};
 
 }

@@ -13,6 +13,7 @@ namespace KozaCore
 		float m_startPosX;
 		float m_startPosY;
 
+
 	public:
 		glm::vec2 m_position;
 		glm::mat4 m_transform;

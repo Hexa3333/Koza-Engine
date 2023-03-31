@@ -15,11 +15,14 @@ namespace KozaCore {
 		layout(location = 1) in vec2 mTexCoord;\n\
 		out vec2 v_position; \n\
 		out vec2 v_TextureCoordinates; \n\
+		uniform mat4 u_projection;\n\
+		uniform mat4 u_view; \n\
 		uniform mat4 u_trans; \n\
 		void main()\n\
 		{\n\
 			v_position = mPos; \n\
-			gl_Position = u_trans * vec4(mPos, 0.0f, 1.0f); \n\
+			mat4 pvm = u_projection * u_view * u_model\n\
+			gl_Position = pvm * vec4(mPos, 0.0f, 1.0f); \n\
 			v_TextureCoordinates = vec2(mTexCoord.x, mTexCoord.y); \n\
 		};";
 

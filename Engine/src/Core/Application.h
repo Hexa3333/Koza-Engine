@@ -25,6 +25,7 @@ namespace KozaCore
 		}
 
 	public:
+		static uint16_t WindowWidth, WindowHeight;
 
 		static GLFWwindow* GetMainWindow()
 		{
@@ -38,7 +39,9 @@ namespace KozaCore
 
 		static void Init(const std::string& appName, uint16_t WX, uint16_t WY, int WindowProperties)
 		{
-			INST().window = new Window(appName.c_str(), WX, WY, WindowProperties);
+			WindowWidth = WX;
+			WindowHeight = WY;
+			INST().window = new Window(appName.c_str(), WindowWidth, WindowHeight, WindowProperties);
 
 			stbi_set_flip_vertically_on_load(true);
 

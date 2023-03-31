@@ -1,4 +1,5 @@
 #pragma once
+#include "../Renderer/Renderer.h"
 #include "../../Components/Transform.h"
 #include "../../Components/Shader.h"
 
@@ -14,10 +15,8 @@ namespace KozaCore
 		Shader* m_Shader;
 		IRenderAble(Shader* shader) : m_Shader(shader) {}
 		virtual void Render() = 0;
-		void TickUniforms(Shader* shader)
-		{
-			glUniformMatrix4fv(glGetUniformLocation(m_Shader->getShaderProgram(), "u_trans"), 1, GL_FALSE, glm::value_ptr(transform.m_transform));
-		}
+
+		void TickUniforms(Shader* shader);
 	
 
 		IRenderAble() = delete;

@@ -21,25 +21,29 @@
 namespace KozaCore
 {
     static float defaultSpriteVertices[16] = {
-        //    VERTICES          // TEXTURE
-         1.0f,  1.0f,	1.0f, 1.0f,      // top right
-         1.0f, -1.0f,	1.0f, 0.0f,      // bottom right
-        -1.0f, -1.0f,	0.0f, 0.0f,      // bottom left
-        -1.0f, 1.0f, 	0.0f, 1.0f        // top left
+        //    VERTICES              // TEXTURE
+         0.0f,      0.0f,	        0.0f, 0.0f,      // 0
+         100.0f,    0.0f,	        1.0f, 0.0f,      // 1
+         100.0f,    100.0f, 	    1.0f, 1.0f,      // 2
+         0.0f,      100.0f, 	    0.0f, 1.0f       // 3
     };
     static unsigned int defaultSpriteIndices[6] = {  // note that we start from 0!
-        0, 1, 3,   // first triangle
-        1, 2, 3    // second triangle
+        0, 1, 2,   // first triangle
+        2, 3, 0    // second triangle
     };
 
     static GLsizei Stride = (4 * sizeof(float));
 
     Gameobject::Gameobject(Sprite* sprite, Shader* shader, GLenum drawType)
-        : sizeIndices(sizeof(defaultSpriteIndices)),
-        m_Sprite(*sprite),
+        :
+        sizeIndices(sizeof(defaultSpriteIndices)),
+        m_Sprite(sprite),
+        m_Shader(shader),
         IRenderAble(shader)
     {
         Renderer::MAIN().Entities.push_back(this);
+        sizeIndices = sizeof(defaultSpriteIndices);
+
 
         glGenVertexArrays(1, &VAO);
         glBindVertexArray(VAO);
@@ -61,16 +65,16 @@ namespace KozaCore
     void Gameobject::Render()
     {
         m_Shader->Use();
-        m_Sprite.Bind();
+        m_Sprite->Bind();
 
         glBindVertexArray(VAO);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glDrawElements(GL_TRIANGLES, sizeIndices / 4 /*sizeof(int) == 4*/, GL_UNSIGNED_INT, 0);
 
-        TickUniforms(m_Shader);
+        TickUniforms(m_Shader.get());
     }
 
-    void Gameobject::Destroy()
+    Gameobject::~Gameobject()
     {
         this->IsBeingRendered = false;
 
@@ -78,8 +82,6 @@ namespace KozaCore
         glDeleteBuffers(1, &VBO);
         glDeleteBuffers(1, &EBO);
     }
-
-    Gameobject::~Gameobject() { Destroy(); }
 }
 
 
